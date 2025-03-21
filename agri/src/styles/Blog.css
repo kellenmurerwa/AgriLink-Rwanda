@@ -1,0 +1,53 @@
+* Blogs page styles */
+.ContentContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.PageTitle {
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.BlogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.BlogCard {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.BlogTitle {
+  font-size: 1.5rem;
+  color: #2e7d32;
+  margin-bottom: 0.5rem;
+}
+
+.BlogDate {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.BlogExcerpt {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.ReadMoreLink {
+  display: inline-block;
+  color: #4caf50;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}

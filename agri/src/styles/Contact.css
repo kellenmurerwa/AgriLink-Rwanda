@@ -1,0 +1,117 @@
+/* Contact page styles */
+.ContentContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .PageTitle {
+    font-size: 2.5rem;
+    color: #2e7d32;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .Paragraph {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .SectionTitle {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-bottom: 1rem;
+  }
+  
+  .ContactGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .ContactInfo {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .AddressBlock {
+    margin-top: 2rem;
+  }
+  
+  .AddressTitle {
+    font-size: 1.3rem;
+    color: #2e7d32;
+    margin-bottom: 0.5rem;
+  }
+  
+  .AddressLine {
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  .FormContainer {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ContactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .FormGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .FormLabel {
+    margin-bottom: 0.5rem;
+    color: #444;
+    font-weight: 500;
+  }
+  
+  .FormInput, .FormTextarea {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+  
+  .FormInput:focus, .FormTextarea:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+  }
+  
+  .FormTextarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .SubmitButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    font-weight: 600;
+  }
+  
+  /* Responsive adjustment for smaller screens */
+  @media (max-width: 768px) {
+    .ContactGrid {
+      grid-template-columns: 1fr;
+    }
+  }
