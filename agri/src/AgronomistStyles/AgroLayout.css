@@ -1,0 +1,14 @@
+.dashboardContainer {
+    display: flex;
+  }
+  
+  .mainContainer {
+    flex: 1;
+  }
+  
+  .contentContainer {
+    padding: 1.5rem;
+    background-color: #f3f4f6;
+    min-height: calc(100vh - 4rem);
+    padding-top: 5rem;
+  }
