@@ -1,0 +1,385 @@
+.dashboard-container {
+  position: absolute;
+  top: 90px; 
+  left: 320px; 
+  right: 20px;
+  padding: 0;
+  margin: 0;
+  background-color: #f5f7fa;
+}
+
+/* Header section */
+.title-container {
+  background-color: #f8f9fb;
+  padding: 24px 32px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.page-description {
+  color: #666;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Grid layout for cards */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding: 0 20px;
+}
+
+/* Card styling for better readability */
+.dashboard-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-card-wide {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  grid-column: 1 / -1;
+  margin-bottom: 24px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Farmer grid layout */
+.farmers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.farmer-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fafafa;
+}
+
+/* Farmer card content */
+.farmer-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.farmer-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(33, 150, 83, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.farmer-avatar-icon {
+  color: #219653;
+}
+
+.farmer-name {
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #333;
+}
+
+.farmer-type {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.farmer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.farmer-location {
+  display: flex;
+  align-items: center;
+  color: #666;
+}
+
+.location-icon {
+  margin-right: 6px;
+  color: #666;
+}
+
+.farmer-rating {
+  color: #F2C94C;
+  font-weight: 600;
+}
+
+.farmer-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.view-profile-button, .contact-button {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  flex: 1;
+  border: none;
+  text-align: center;
+}
+
+.view-profile-button {
+  background-color: rgba(33, 150, 83, 0.1);
+  color: #219653;
+}
+
+.contact-button {
+  background-color: #219653;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .dashboard-container {
+    left: 280px;
+  }
+}
+
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-container {
+    left: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .farmers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-card, .dashboard-card-wide {
+    padding: 20px;
+  }
+  
+  .page-title {
+    font-size: 22px;
+  }
+  
+  .dashboard-container {
+    left: 0;
+    padding: 16px;
+  }
+}
+
+
+/* -------------------------------------------------------------- */
+/* Messenger Overlay */
+.messenger-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.messenger-container {
+  width: 400px;
+  height: 500px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.messenger-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #0b4424;
+  color: white;
+}
+
+.messenger-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #ffff;
+}
+
+.close-messenger {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.messages-container {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+}
+
+.no-messages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #888;
+  font-style: italic;
+}
+
+.message {
+  max-width: 70%;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.message.sent {
+  align-self: flex-end;
+}
+
+.message.received {
+  align-self: flex-start;
+}
+
+.message-content {
+  padding: 10px 15px;
+  border-radius: 18px;
+  position: relative;
+}
+
+.message.sent .message-content {
+  background-color: #219653;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message.received .message-content {
+  background-color: white;
+  color: #333;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.message-content p {
+  margin: 0 0 15px 0;
+}
+
+.message-time {
+  font-size: 11px;
+  position: absolute;
+  bottom: 4px;
+  right: 10px;
+  opacity: 0.8;
+}
+
+.message-input-container {
+  display: flex;
+  padding: 10px;
+  background-color: white;
+  border-top: 1px solid #eee;
+}
+
+.message-input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 15px;
+  resize: none;
+  height: 40px;
+  font-family: inherit;
+  line-height: 20px;
+}
+
+.send-message-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #219653;
+  color: white;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-message-button:hover {
+  background-color: #1b7a44;
+}
+
+.farmer-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.view-profile-button, .contact-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+}
+
+.view-profile-button {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.contact-button {
+  background-color: #219653;
+  color: white;
+}
+
+.view-profile-button:hover {
+  background-color: #e6e6e6;
+}
+
+.contact-button:hover {
+  background-color: #1b7a44;
+}

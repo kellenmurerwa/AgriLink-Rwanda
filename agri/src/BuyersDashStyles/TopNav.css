@@ -1,0 +1,115 @@
+.searchInput {
+  padding: 0.5rem 0.75rem;
+  padding-right: 2.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #f5f7fa;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.25rem;
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  height: 1.25rem;
+  width: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.colorModeContainer{
+  position: relative;
+  cursor: pointer;
+}
+.colorModeIcon{
+  color: #f3f5f7;
+}
+
+.SettingsContainer{
+  position: relative;
+  cursor: pointer;
+}
+
+.settingsIcon{
+  color: #f3f5f7;
+}
+.topNav {
+    background-color: rgb(24, 87, 40);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    height: 4rem;
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+  }
+  
+  .navLeft {
+    display: flex;
+    align-items: center;
+  }
+  
+  .pageTitle {
+    color: #f2f3f5;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .navRight {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .searchContainer {
+    position: relative;
+  }
+    
+  .searchInput:focus {
+    outline: none;
+    border-color: #ced1d6;
+  }
+  
+  .searchIcon {
+    position: absolute;
+    right: 0.75rem;
+    top: 0.625rem;
+    color: #f2f3f5;
+  }
+  
+  .notificationContainer {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .notificationIcon {
+    color: #f3f5f7;
+  }
+  
+  .userAvatar {
+    width: 2rem;
+    height: 2rem;
+    background-color: #e0e0e1;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(18, 17, 17);
+    font-weight: 600;
+  }
+  
+.userProfileContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.userName {
+  margin-left: 0.5rem;
+  color: #e0e0e1;
+}
