@@ -19,8 +19,10 @@ import LogisticsPlanning from './BuyersDashboard/LogisticsPlanning';
 import AgroLayout from './AgronomistDashboard/AgroLayout';
 import AgroDash from './AgronomistDashboard/AgroDash';
 import AgroSoilAnalysis from './AgronomistDashboard/AgroSoilAnalysis';
-import LayoutDash from './Dashboards/LayoutDash';
 
+import LayoutDash from './Dashboards/LayoutDash';
+import MessagingHub from './Dashboards/MessagingHub';
+import FarmerToDo from './Dashboards/FarmerToDo';
 function App() {
   return ( 
     <BrowserRouter>
@@ -48,6 +50,8 @@ function App() {
         <Route path='/login' element ={<LoginSignup/>}/>
         <Route path='/' element={<LayoutDash/>}>
         <Route path='/dashboard' element ={<FarmerDashboard/>}/>
+        <Route path='/community' element ={<MessagingHub/>}/>
+        <Route path='/todo' element ={<FarmerToDo/>}/>
         </Route>
         
         <Route path="/" element={<BuyersLayout />}>

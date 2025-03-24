@@ -1,0 +1,29 @@
+/* LayoutDash.css */
+.dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .dashboardLayout {
+    display: flex;
+    flex: 1;
+  }
+  
+  .sideNavBar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .contentArea {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .dark {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  

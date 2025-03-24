@@ -1,0 +1,131 @@
+/* Sidebar Container */
+.sidebar {
+  background-color: #1e5f2a; /* Dark green */
+  color: white;
+  height: 100vh;
+  position: fixed;
+  transition: width 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Sidebar Expansion */
+.sidebarExpanded {
+  width: 16rem;
+}
+
+.sidebarCollapsed {
+  width: 5rem;
+}
+
+/* Sidebar Header */
+.sidebarHeader {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Img {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.Img img {
+  height: 50px;
+  width: 50px;
+}
+
+.sidebarTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Toggle Button */
+.sidebarToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.sidebarToggle:hover {
+  transform: scale(1.1);
+}
+
+/* Sidebar Content */
+.sidebarContent {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Sidebar Section Header */
+.sidebarSectionHeader {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+/* Sidebar Item */
+.sidebarItem {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  text-decoration: none;  
+  color: white;
+ 
+  border-radius: 5px;
+}
+
+.sidebarItem:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
+}
+
+/* Active Link */
+.sidebarItem.activeItem {
+  background-color: rgba(255, 255, 255, 0.25);
+  font-weight: bold;
+}
+
+/* Sidebar Item Icon */
+.itemIcon {
+  margin-right: 0.75rem;
+}
+
+/* Sidebar Item Text */
+.itemText {
+  white-space: nowrap;
+}
+
+/* Responsive for Smaller Screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 5rem;
+  }
+
+  .sidebarExpanded {
+    width: 14rem;
+  }
+
+  .sidebarCollapsed {
+    width: 4rem;
+  }
+
+  .sidebarTitle {
+    display: none;
+  }
+
+  .itemText {
+    display: none;
+  }
+}
