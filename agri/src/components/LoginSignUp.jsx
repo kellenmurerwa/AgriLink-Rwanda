@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Notify } from 'notiflix';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import jwt_decode from 'jwt-decode';
 
 const API_URL = 'https://agrilink-backend-24zq.onrender.com';
 
@@ -73,17 +74,40 @@ const LoginSignup = () => {
       if (userData.user && userData.user.accessToken) {
         localStorage.setItem('token', userData.user.accessToken);
       }
-      
+      /////------------------------------------------------//
+      const token = userData.user.accessToken
+      const decoded = jwt_decode(token)
+      const userRole = decoded.role
+      const userName = decoded.firstName
+      localStorage.setItem('userName', userName);
+///---------------------------------------------------------///
+
+
       // Store user information
       if (userData.user) {
         localStorage.setItem('userId', userData.user._id);
-        localStorage.setItem('firstName', userData.user.firstName);
         localStorage.setItem('lastName', userData.user.lastName);
         localStorage.setItem('role', userData.user.role);
       }
       
       Notify.success('Login Successful');
-      navigate('/dashboard');
+      if (userRole === 'Farmer'){
+        navigate('/dashboard');
+      }
+
+      else if (userRole === 'Buyer'){
+        navigate('/supply');
+      }
+      else if (userRole === 'Agronomist'){
+        navigate('/agrosoilanalysis');
+      }
+
+      else{
+        navigate('/home')
+      }
+      
+      
+
     } catch (error) {
       console.error('Login error:', error);
       const errorMsg = error.response?.data?.message || "An error occurred";

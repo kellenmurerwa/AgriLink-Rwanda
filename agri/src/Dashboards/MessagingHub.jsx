@@ -1,14 +1,28 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import axios from "axios";
+import { Notify } from "notiflix";
 import "../DashboardStyles/MessagingHub.css";
-
+const styles={
+  stripedRow: { backgroundColor: "none" },
+  normalRow: { backgroundColor: "none" },
+}
 export const MessagingHub = () => {
-  const initialPeople = [
-    { name: "Alice Farmer", email: "alice@example.com", occupation: "Farmer", location: "Kigali" },
-    { name: "John Buyer", email: "john@example.com", occupation: "Buyer", location: "Musanze" },
-    { name: "David Agronomist", email: "david@example.com", occupation: "Agronomist", location: "Huye" },
-  ];
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+  const API_URL = 'https://agrilink-backend-24zq.onrender.com';
+  const fetchUsers = async () => {
+    try {
+      const response = await axios.get(`${API_URL}/user/list`);
+      setUsers(response.data.AllUsers || []);
+    } catch (err) {
+      console.error("Error fetching users:", err);
+      Notify.failure("Failed to fetch users. Please try again later.");
+    } 
+  };
 
-  const [people, setPeople] = useState(initialPeople);
+  
   const [contacts, setContacts] = useState([]);
   const [selectedContact, setSelectedContact] = useState(null);
   const [messages, setMessages] = useState({});
@@ -40,23 +54,21 @@ export const MessagingHub = () => {
         <table>
           <thead>
             <tr>
-              <th>Name</th>
+              <th>FirstName</th>
+              <th>LastName</th>
               <th>Email</th>
               <th>Occupation</th>
-              <th>Location</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {people.map((person, index) => (
-              <tr key={index}>
-                <td>{person.name}</td>
-                <td>{person.email}</td>
-                <td>{person.occupation}</td>
-                <td>{person.location}</td>
-                <td>
-                  <button className="add-button" onClick={() => addToContacts(person)}>Add</button>
-                </td>
+            {users.map((user, index) => (
+              <tr key={user._id} style={index % 2 === 0 ? styles.stripedRow : styles.normalRow}>
+                <td>{user.firstName}</td>
+                <td>{user.lastName}</td>
+                <td>{user.email}</td>
+                <td>{user.role}</td>
+                <td ><button>Add</button></td>
               </tr>
             ))}
           </tbody>

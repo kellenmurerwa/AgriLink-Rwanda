@@ -383,3 +383,25 @@
 .contact-button:hover {
   background-color: #1b7a44;
 }
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    left: 0;
+    padding: 16px;
+  }
+
+  .messenger-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .message-input {
+    font-size: 14px;
+  }
+
+  .send-message-button {
+    width: 35px;
+    height: 35px;
+  }
+}

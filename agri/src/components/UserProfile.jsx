@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Settings } from "lucide-react"; // Import settings icon
+import { Settings } from "lucide-react"; 
 import "../styles/UserProfile.css";
 
 const UserProfile = () => {
@@ -7,6 +7,26 @@ const UserProfile = () => {
   const [profilePic, setProfilePic] = useState(
     localStorage.getItem("profilePic") || null
   );
+  const [userName, setUserName] = useState("");
+  
+useEffect(()=>
+{
+const fetchUserName=async()=>
+{
+  try{
+//retrieve username from local storage
+const storedName = localStorage.getItem("userName");
+if (storedName) {
+  setUserName(storedName);
+}
+  }
+  catch(err)
+  {
+    console.error("Error Fetching Name")
+  }
+};
+fetchUserName();
+},[])
 
   // Toggle dropdown menu
   const toggleDropdown = () => {
@@ -59,7 +79,7 @@ const UserProfile = () => {
           "IB"
         )}
       </div>
-      <span className="userName">Ineza Bonae</span>
+      <span className="userName">{userName?userName:"Agri"}</span>
 
       {isDropdownOpen && (
         <div className="dropdownMenu">

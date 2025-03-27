@@ -32,7 +32,7 @@ const AgroSideBar = ({ sidebarOpen, setSidebarOpen }) => {
         <div className="sidebarSectionHeader">
           {sidebarOpen && "ADVISORY TOOLS"}
         </div>
-        <SidebarItem to="/soil" icon={<Activity size={20} />} text="Soil Analysis" sidebarOpen={sidebarOpen} />
+        <SidebarItem to="/agrosoilanalysis" icon={<Activity size={20} />} text="Soil Analysis" sidebarOpen={sidebarOpen} />
         <SidebarItem to="/pests" icon={<Bug size={20} />} text="Pest & Disease" sidebarOpen={sidebarOpen} />
         <SidebarItem to="/inputs" icon={<Sliders size={20} />} text="Input Optimization" sidebarOpen={sidebarOpen} />
         <SidebarItem to="/climate" icon={<CloudLightning size={20} />} text="Climate Tools" sidebarOpen={sidebarOpen} />
