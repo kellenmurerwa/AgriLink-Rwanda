@@ -150,7 +150,6 @@ function TransactionManagement() {
                 value={activeTab}
                 onChange={(e) => setActiveTab(e.target.value)}
               >
-                <option value="volume">Transaction Volume</option>
                 <option value="trends">Trends</option>
                 <option value="suppliers">Top Suppliers</option>
               </select>

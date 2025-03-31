@@ -283,8 +283,8 @@ import "../BuyersDashStyles/supplyDiscovery.css"
                     <Tooltip />
                     <Legend />
                     <Bar dataKey="Coffee" fill="#4d7c0f" />
-                    <Bar dataKey="Tea" fill="#b45309" />
-                    <Bar dataKey="Maize" fill="#0369a1" />
+                    <Bar dataKey="Tea" fill="#004d00" />
+                    <Bar dataKey="Maize" fill="#008000" />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
