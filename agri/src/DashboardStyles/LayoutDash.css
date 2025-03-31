@@ -2,13 +2,14 @@
   display: flex;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto; /* Allow scrolling if content is too large */
 }
 
 .sideNavBar {
   position: fixed  !important; 
   top: 0;
   bottom: 0;
+  width: 16rem;
   z-index: 100!important; 
   height: 100vh;
 }
@@ -24,12 +25,16 @@
   padding: 20px;
   background-color: #fff;
   overflow-y: auto;
-  width: 100% !important;
+  width: 83% !important; 
 }
 
 @media (max-width: 768px) {
+  .sideNavBar {
+    width: 5rem; 
+  }
+
   .contentArea {
-    margin-left: 5rem; /* Match collapsed sidebar width */
+    margin-left: 5rem; 
     width: calc(100% - 5rem);
   }
 }
