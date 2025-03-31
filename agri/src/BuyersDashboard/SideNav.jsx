@@ -6,7 +6,7 @@ import { Home, ShoppingBag, Calendar, Truck, Users, Menu } from 'lucide-react';
 
 const SideNav = ({ sidebarOpen, setSidebarOpen }) => {
   return (
-    <div className={`sidebar ${sidebarOpen ? 'sidebarExpanded' : 'sidebarCollapsed'}`}>
+    <div className={`sidebar2 ${sidebarOpen ? 'sidebarExpanded' : 'sidebarCollapsed'}`}>
       {/* Sidebar Header */}
       <div className="sidebarHeader">
         {sidebarOpen && (

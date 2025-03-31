@@ -16,7 +16,7 @@ import {
   PolarAngleAxis,
   PolarRadiusAxis,
   Radar,
-} from "./charts/Charts.jsx"
+} from "../Charts/Charts.jsx"
 import "../BuyersDashStyles/RelationshipManagement.css"
 
 function RelationshipManagement() {
