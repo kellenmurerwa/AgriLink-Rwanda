@@ -9,30 +9,30 @@ function LayoutDash() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   
   return (
-    <div className="dashboardContainer">
+    <div className="dashboardContainer1">
       <SideNavBar
         activeSection={activeSection}
         setActiveSection={setActiveSection}
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
       />
-      <div className="mainContainer">
+      <div className="mainContainer1">
         <DashNavBar 
           sidebarOpen={sidebarOpen} 
           setSidebarOpen={setSidebarOpen} 
-          className="dashNavBar"
+          className="dashNavBar1"
           style={{
             left: sidebarOpen ? '16rem' : '5rem'
           }}
         />
         <div 
-          className="contentArea"
+          className="contentArea1"
           style={{
             marginLeft: sidebarOpen ? '16rem' : '5rem',
             width: `calc(100% - ${sidebarOpen ? '16rem' : '5rem'})`
           }}
         >
-          <main className="contentContainer">
+          <main className="contentContainer1">
             <Outlet />
           </main>
         </div>

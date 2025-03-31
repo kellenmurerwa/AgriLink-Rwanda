@@ -1,4 +1,4 @@
-/* LayoutDash.css */
+
 .dashboardContainer {
     display: flex;
     flex-direction: column;
@@ -10,12 +10,9 @@
     flex: 1;
     padding: 20px;
     background-color: #fff;
-    width: 100% !important;
-    max-width: 100% ;
+    width: 100%;
+    max-width: 83% ;
   }
   
-  .dark {
-    background-color: #121212;
-    color: #ffffff;
-  }
+  
   
