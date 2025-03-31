@@ -1,4 +1,14 @@
 /* Remove underline from sidebar links */
+.sidebar2{
+  background-color: #1e5f2a; /* Dark green */
+  color: white;
+  height: 100vh;
+  position: fixed;
+  transition: width 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
 .sidebarItem {
   display: flex;
   align-items: center;

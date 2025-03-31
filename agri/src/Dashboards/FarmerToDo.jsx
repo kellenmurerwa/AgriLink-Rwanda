@@ -118,7 +118,7 @@ const FarmerToDo = () => {
         <div className="dashboardCard tasksCard">
           <div className="cardHeader">
             <h2>Tasks</h2>
-            <div className="cropIcon">🚜</div>
+            {/* <div className="cropIcon">🚜</div> */}
           </div>
           
           <div className="tasksList">
@@ -142,7 +142,7 @@ const FarmerToDo = () => {
         <div className="dashboardCard remindersCard">
           <div className="cardHeader">
             <h2>Reminder</h2>
-            <div className="cropIcon">⏰</div>
+            {/* <div className="cropIcon">⏰</div> */}
           </div>
           
           <div className="remindersList">
@@ -167,13 +167,13 @@ const FarmerToDo = () => {
         </div>
 
         {/* Soil Details Card */}
-        <div className="dashboardCard soilDetailsCard">
+        {/* <div className="dashboardCard soilDetailsCard">
           <div className="cardHeader">
             <h2>Soil Details</h2>
             <div className="cropIcon">🌍</div>
-          </div>
+          </div> */}
           
-          <div className="soilDetailsGrid">
+          {/* <div className="soilDetailsGrid">
             <div className="soilColumn">
               <div className="soilDetailItem">
                 <span className="detailLabel">Soil Texture</span>
@@ -211,8 +211,8 @@ const FarmerToDo = () => {
                 <span className="detailLabel">Sodium</span>
                 <span className="detailValue">{soilDetails.sodium}</span>
               </div>
-            </div>
-            <div className="soilColumn">
+            </div> */}
+            {/* <div className="soilColumn">
               <div className="soilDetailItem">
                 <span className="detailLabel">PH Value</span>
                 <span className="detailValue">{soilDetails.phValue}</span>
@@ -244,14 +244,14 @@ const FarmerToDo = () => {
               <div className="soilDetailItem">
                 <span className="detailLabel">Molybdenum</span>
                 <span className="detailValue">{soilDetails.molybdenum}</span>
-              </div>
-              <div className="soilDetailItem">
+              </div> */}
+              {/* <div className="soilDetailItem">
                 <span className="detailLabel">Aluminum</span>
                 <span className="detailValue">{soilDetails.aluminum}</span>
-              </div>
-            </div>
-          </div>
-        </div>
+              </div> */}
+            {/* </div> */}
+          {/* </div> */}
+        {/* </div> */}
       </div>
 
       {/* Task Progress Kanban Board */}
@@ -315,7 +315,7 @@ const FarmerToDo = () => {
               className="addTaskButton"
               onClick={handleAddTask}
             >
-              Plant New Task 🌱
+              Plant New Task 
             </button>
           </div>
         </div>
@@ -326,7 +326,7 @@ const FarmerToDo = () => {
           <div className="kanbanColumn todoColumn">
             <div className="columnHeader">
               <h3>To Plant</h3>
-              <div className="seedIcon">🌰</div>
+              {/* <div className="seedIcon">🌰</div> */}
             </div>
             <div className="columnContent">
               {kanbanTasks.todo.map(task => (
@@ -355,7 +355,7 @@ const FarmerToDo = () => {
           <div className="kanbanColumn inProgressColumn">
             <div className="columnHeader">
               <h3>Growing</h3>
-              <div className="growingIcon">🌿</div>
+              {/* <div className="growingIcon">🌿</div> */}
             </div>
             <div className="columnContent">
               {kanbanTasks.inProgress.map(task => (
@@ -390,7 +390,7 @@ const FarmerToDo = () => {
           <div className="kanbanColumn completedColumn">
             <div className="columnHeader">
               <h3>Harvested</h3>
-              <div className="harvestedIcon">🌾</div>
+              {/* <div className="harvestedIcon">🌾</div> */}
             </div>
             <div className="columnContent">
               {kanbanTasks.completed.map(task => (
@@ -418,12 +418,12 @@ const FarmerToDo = () => {
         </div>
       </div>
       
-      <footer className="dashboardFooter">
+      {/* <footer className="dashboardFooter">
         <p>Nurturing Growth, One Task at a Time</p>
         <div className="footerIcons">
           🌱 🌿 🌾 🚜 🧑‍🌾
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 };

@@ -28,9 +28,9 @@ export const MessagingHub = () => {
   const [messages, setMessages] = useState({});
   const [input, setInput] = useState("");
 
-  const addToContacts = (person) => {
-    if (!contacts.find((c) => c.email === person.email)) {
-      setContacts([...contacts, person]);
+  const addToContacts = (user) => {
+    if (!contacts.find((c) => c.email === user.email)) {
+      setContacts([...contacts, user]);
     }
   };
 
@@ -68,7 +68,9 @@ export const MessagingHub = () => {
                 <td>{user.lastName}</td>
                 <td>{user.email}</td>
                 <td>{user.role}</td>
-                <td ><button>Add</button></td>
+                <td >
+                   <button className="add-button" onClick={() => addToContacts(user)}>Add</button>
+                 </td>
               </tr>
             ))}
           </tbody>
@@ -82,7 +84,7 @@ export const MessagingHub = () => {
           <ul>
             {contacts.map((contact, index) => (
               <li key={index} onClick={() => setSelectedContact(contact)} className={selectedContact === contact ? "active-contact" : ""}>
-                {contact.name}
+                {contact.firstName}
               </li>
             ))}
           </ul>
@@ -93,7 +95,7 @@ export const MessagingHub = () => {
           {selectedContact ? (
             <>
               <div className="chat-header">
-                <h3>Chatting with: {selectedContact.name}</h3>
+                <h3>Chatting with: {selectedContact.firstName}</h3>
               </div>
               <div className="messages">
                 {messages[selectedContact.email]?.map((msg, index) => (

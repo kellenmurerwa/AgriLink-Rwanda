@@ -22,11 +22,11 @@ const SideNavBar = ({ sidebarOpen, setSidebarOpen }) => {
       </div>
 
       <div className="sidebarContent">
-        <SidebarItem icon={<Home size={20} />} text="Overview" path="/overview" sidebarOpen={sidebarOpen} />
+        <SidebarItem icon={<Home size={20} />} text="Overview" path="/dashboard" sidebarOpen={sidebarOpen} />
         <SidebarItem icon={<Calendar size={20} />} text="To-do" path="/todo" sidebarOpen={sidebarOpen} />
-        <SidebarItem icon={<TrendingUp size={20} />} text="Performance" path="/performance" sidebarOpen={sidebarOpen} />
-        <SidebarItem icon={<CloudLightning size={20} />} text="Weather Analysis" path="/weather" sidebarOpen={sidebarOpen} />
-        <SidebarItem icon={<BookOpen size={20} />} text="Resources" path="/resources" sidebarOpen={sidebarOpen} />
+        {/* <SidebarItem icon={<TrendingUp size={20} />} text="Performance" path="/performance" sidebarOpen={sidebarOpen} /> */}
+        {/* <SidebarItem icon={<CloudLightning size={20} />} text="Weather Analysis" path="/weather" sidebarOpen={sidebarOpen} /> */}
+        {/* <SidebarItem icon={<BookOpen size={20} />} text="Resources" path="/resources" sidebarOpen={sidebarOpen} /> */}
         <SidebarItem icon={<Users size={20} />} text="Community" path="/community" sidebarOpen={sidebarOpen} />
       </div>
     </div>
