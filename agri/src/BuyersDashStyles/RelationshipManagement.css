@@ -71,17 +71,17 @@
 
 .relationship-management-card-icon {
   margin-right: 0.5rem;
-  color: #7c3aed;
+  color: #2c7e47;
 }
 
 .relationship-management-add-button {
   padding: 0.375rem 0.75rem;
   font-size: 0.875rem;
-  background-color: #7c3aed;
+  background-color: #2c7e47;
 }
 
 .relationship-management-add-button:hover {
-  background-color: #6d28d9;
+  background-color: #2c7e47;
 }
 
 .relationship-management-card-select {
@@ -232,7 +232,7 @@
 }
 
 .relationship-management-action-menu-item.text-red {
-  color: #dc2626;
+  color: #2c7e47;
 }
 
 .relationship-management-chart {
@@ -343,11 +343,11 @@
 .relationship-management-button {
   width: 100%;
   margin-top: 0.5rem;
-  background-color: #7c3aed;
+  background-color: #2c7e47;
 }
 
 .relationship-management-button:hover {
-  background-color: #6d28d9;
+  background-color: #2c7e47;
 }
 
 .relationship-management-communication-summary {
@@ -427,11 +427,11 @@
 
 .badge-purple {
   background-color: rgba(124, 58, 237, 0.1);
-  color: #7c3aed;
+  color: #2c7e47;
 }
 
 .badge-gray {
   background-color: rgba(107, 114, 128, 0.1);
-  color: #6b7280;
+  color: #2c7e47;
 }
 

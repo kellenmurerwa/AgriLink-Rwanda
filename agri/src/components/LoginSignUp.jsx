@@ -96,7 +96,7 @@ const LoginSignup = () => {
       }
 
       else if (userRole === 'Buyer'){
-        navigate('/supply');
+        navigate('/buyersoverview');
       }
       else if (userRole === 'Agronomist'){
         navigate('/agrosoilanalysis');
