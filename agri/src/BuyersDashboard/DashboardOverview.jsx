@@ -14,7 +14,7 @@ import {
   PieChart,
   Pie,
   Cell,
-} from "./charts/Charts.jsx"
+} from "../Charts/Charts.jsx"
 import "../BuyersDashStyles/DashboardOverview.css"
 
 function DashboardOverview() {

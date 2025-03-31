@@ -12,7 +12,7 @@ import {
   Pie,
   Cell,
   Legend,
-} from "./charts/Charts.jsx"
+} from "../Charts/Charts.jsx"
 import "../BuyersDashStyles/TransactionManagement.css"
 
 function TransactionManagement() {

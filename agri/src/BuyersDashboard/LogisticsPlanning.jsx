@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Calendar, Clock, MapPin, MoreHorizontal, Route, Truck, Warehouse } from "lucide-react"
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "./charts/Charts.jsx"
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "../Charts/Charts.jsx"
 import "../BuyersDashStyles/logisticsPlanning.css"
 
  function LogisticsPlanning() {
