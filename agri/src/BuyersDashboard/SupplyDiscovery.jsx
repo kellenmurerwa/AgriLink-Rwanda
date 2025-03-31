@@ -184,7 +184,7 @@ const SupplyDiscovery = () => {
         </div>
 
         {/* Harvest Forecast */}
-        <div className="card">
+        <div className="HarvestCard">
           <h3 className="cardTitle">Crop Harvest Forecast</h3>
           <ResponsiveContainer width="100%" height={300}>
             <AreaChart data={cropForecastData}>

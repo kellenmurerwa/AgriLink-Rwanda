@@ -18,6 +18,7 @@ import SupplyDiscovery from './BuyersDashboard/SupplyDiscovery';
 import LogisticsPlanning from './BuyersDashboard/LogisticsPlanning';
 import AgroLayout from './AgronomistDashboard/AgroLayout';
 import AgroDash from './AgronomistDashboard/AgroDash';
+import FLayout from './Dashboards/Flayout';
 import AgroSoilAnalysis from './AgronomistDashboard/AgroSoilAnalysis';
 
 import LayoutDash from './Dashboards/LayoutDash';
