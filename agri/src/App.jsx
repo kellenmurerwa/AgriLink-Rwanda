@@ -25,7 +25,10 @@ import AgroSoilAnalysis from './AgronomistDashboard/AgroSoilAnalysis';
 
 import LayoutDash from './Dashboards/LayoutDash';
 import MessagingHub from './Dashboards/MessagingHub';
-import FarmerToDo from './Dashboards/FarmerToDo';
+
+import OperationsManagement from './Dashboards/OperationManagement';
+import MarketAccess from './Dashboards/Market';
+import Space from './Dashboards/Space';
 function App() {
   return ( 
     <BrowserRouter>
@@ -53,8 +56,10 @@ function App() {
         <Route path='/login' element ={<LoginSignup/>}/>
         <Route path='/' element={<LayoutDash/>}>
         <Route path='/dashboard' element ={<FarmerDashboard/>}/>
+        <Route path='/operations' element ={<OperationsManagement/>}/>
+        <Route path='/market' element ={<MarketAccess/>}/>
         <Route path='/community' element ={<MessagingHub/>}/>
-        <Route path='/todo' element ={<FarmerToDo/>}/>
+        <Route path='/space' element ={<Space/>}/>
         </Route>
         
         <Route path="/" element={<BuyersLayout />}>
