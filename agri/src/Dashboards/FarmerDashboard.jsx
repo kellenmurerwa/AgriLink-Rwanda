@@ -1,3 +1,4 @@
+// "use client"
 
 import { useState } from "react"
 import {
@@ -12,7 +13,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts"
-import { Cloud, Droplets, Leaf, Wind, Thermometer, Waves, ArrowUp, DollarSign, Crop, MapPin, X } from 'lucide-react'
+import { Cloud, Droplets, Leaf, Wind, Thermometer, Waves, ArrowUp, DollarSign, Crop, MapPin, X } from "lucide-react"
 import "../DashboardStyles/FarmerDashboard.css"
 
 function FarmerDashboard() {
@@ -130,8 +131,8 @@ function FarmerDashboard() {
   }
 
   return (
-    <div className="dashboard-container" style={{width: '100%'}}>
-      <div className="dashboard-content" style={{width: '100%'}}>
+    <div className="dashboard-container">
+      <div className="dashboard-content">
         <h1 className="dashboard-title">Farmer's Dashboard</h1>
 
         <div className="dashboard-grid">
@@ -205,7 +206,7 @@ function FarmerDashboard() {
           </div>
 
           {/* Main content area */}
-          <div className="main-content"style={{width: '100%'}}>
+          <div className="main-content">
             <div className="charts-row">
               {/* Overview Chart */}
               <div className="chart-card">
@@ -664,9 +665,12 @@ function FarmerDashboard() {
             </div>
           </div>
         </div>
+
+       
       </div>
     </div>
   )
 }
 
-export default FarmerDashboard
+export default FarmerDashboard;
+

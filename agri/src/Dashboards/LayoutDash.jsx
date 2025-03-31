@@ -11,32 +11,23 @@ function LayoutDash() {
       
         return (
           <div className="dashboardContainer">
-            <SideNavBar
-              activeSection={activeSection}
-              setActiveSection={setActiveSection}
-              sidebarOpen={sidebarOpen}
-              setSidebarOpen={setSidebarOpen}
-              className="sideNavBar"
-              style={{ 
-                width: sidebarOpen ? '16rem' : '5rem',
-                transition: 'width 0.3s ease'
-              }}
+            <SideNavBar 
+              activeSection={activeSection} 
+              setActiveSection={setActiveSection} 
+              sidebarOpen={sidebarOpen} 
+              setSidebarOpen={setSidebarOpen} 
             />
-            <div
-              className="contentArea"
-              style={{
-                marginLeft: sidebarOpen ? '16rem' : '5rem',
-                width: `calc(100% - ${sidebarOpen ? '16rem' : '5rem'})`,
-                transition: 'margin-left 0.3s ease, width 0.3s ease'
-              }}
-            >
+            <div className="mainContainer">
               <DashNavBar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-              <main className="contentContainer">
+              <main 
+                className="contentContainer" 
+                style={{ marginLeft: sidebarOpen ? '16rem' : '5rem' }}
+              >
                 <Outlet />
               </main>
             </div>
           </div>
         );
-      }
-    }    
+      };
+    }      
 export default LayoutDash;
