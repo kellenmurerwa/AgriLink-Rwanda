@@ -16,6 +16,8 @@ import TransactionManagement from './BuyersDashboard/TransactionManagement';
 import RelationshipManagement from './BuyersDashboard/RelationshipManagement';
 import SupplyDiscovery from './BuyersDashboard/SupplyDiscovery';
 import LogisticsPlanning from './BuyersDashboard/LogisticsPlanning';
+import DashboardOverview from './BuyersDashboard/DashboardOverview';
+
 import AgroLayout from './AgronomistDashboard/AgroLayout';
 import AgroDash from './AgronomistDashboard/AgroDash';
 import AgroSoilAnalysis from './AgronomistDashboard/AgroSoilAnalysis';
@@ -55,7 +57,8 @@ function App() {
         </Route>
         
         <Route path="/" element={<BuyersLayout />}>
-          <Route index element={<SupplyDiscovery />} />
+          <Route index element={<DashboardOverview />} />
+          <Route path="/buyersoverview" element={<DashboardOverview />} />
           <Route path="/supply" element={<SupplyDiscovery />} />
           <Route path="/transactions" element={<TransactionManagement />} />
           <Route path="/logistics" element={<LogisticsPlanning />} />

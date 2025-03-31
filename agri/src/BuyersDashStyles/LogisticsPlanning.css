@@ -1,0 +1,419 @@
+.logistics-planning {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .logistics-planning-header {
+    margin-bottom: 1rem;
+  }
+  
+  .logistics-planning-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .logistics-planning-subtitle {
+    color: var(--muted-foreground);
+    margin: 0;
+  }
+  
+  .logistics-planning-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .logistics-planning-content {
+      flex-direction: row;
+    }
+  
+    .logistics-planning-main {
+      flex: 1;
+    }
+  
+    .logistics-planning-sidebar {
+      width: 320px;
+      flex-shrink: 0;
+    }
+  }
+  
+  .logistics-planning-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  
+  .logistics-planning-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .logistics-planning-card-title-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logistics-planning-card-title {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .logistics-planning-card-icon {
+    margin-right: 0.5rem;
+    color: var(--accent);
+  }
+  
+  .logistics-planning-add-button {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .logistics-planning-card-select {
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--border);
+    background-color: white;
+    font-size: 0.875rem;
+  }
+  
+  .logistics-planning-card-content {
+    padding: 1.5rem;
+  }
+  
+  .logistics-planning-table {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .logistics-planning-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .logistics-planning-table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .logistics-planning-table td {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .logistics-planning-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .logistics-planning-table .text-right {
+    text-align: right;
+  }
+  
+  .logistics-planning-table .font-medium {
+    font-weight: 500;
+  }
+  
+  .logistics-planning-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logistics-planning-date-icon {
+    color: var(--muted-foreground);
+  }
+  
+  .logistics-planning-actions {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .logistics-planning-action-button {
+    background: none;
+    border: none;
+    color: var(--foreground);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+  }
+  
+  .logistics-planning-action-button:hover {
+    background-color: var(--input);
+  }
+  
+  .logistics-planning-action-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 180px;
+    background-color: white;
+    border-radius: 0.375rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: none;
+  }
+  
+  .logistics-planning-actions:hover .logistics-planning-action-menu {
+    display: block;
+  }
+  
+  .logistics-planning-action-menu-item {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .logistics-planning-action-menu-item:hover {
+    background-color: var(--input);
+  }
+  
+  .logistics-planning-action-menu-item.text-red {
+    color: #dc2626;
+  }
+  
+  .logistics-planning-map-view {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .logistics-planning-map-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .logistics-planning-map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .logistics-planning-map-overlay p {
+    margin-bottom: 1rem;
+    color: var(--foreground);
+    font-weight: 500;
+  }
+  
+  .logistics-planning-routes {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .logistics-planning-routes {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .logistics-planning-route-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+    padding: 1rem;
+  }
+  
+  .logistics-planning-route-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+  
+  .logistics-planning-route-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .logistics-planning-route-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .logistics-planning-route-detail {
+    font-size: 0.75rem;
+  }
+  
+  .logistics-planning-route-label {
+    color: var(--muted-foreground);
+    margin-right: 0.25rem;
+  }
+  
+  .logistics-planning-route-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .logistics-planning-route-button {
+    padding: 0.375rem 0.75rem;
+    background-color: white;
+    border: 1px solid var(--border);
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .logistics-planning-route-button:hover {
+    background-color: var(--input);
+  }
+  
+  .logistics-planning-chart {
+    width: 100%;
+  }
+  
+  .logistics-planning-storage {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .logistics-planning-storage-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .logistics-planning-storage-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logistics-planning-storage-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .logistics-planning-storage-progress {
+    height: 8px;
+    background-color: var(--input);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .logistics-planning-storage-progress-bar {
+    height: 100%;
+    background-color: var(--accent);
+    border-radius: 4px;
+  }
+  
+  .logistics-planning-storage-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+  }
+  
+  .logistics-planning-button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  
+  .logistics-planning-collection {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .logistics-planning-collection-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+    padding: 1rem;
+  }
+  
+  .logistics-planning-collection-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+  
+  .logistics-planning-collection-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .logistics-planning-collection-details {
+    margin-bottom: 0.75rem;
+  }
+  
+  .logistics-planning-collection-detail {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .logistics-planning-collection-icon {
+    color: var(--muted-foreground);
+    margin-right: 0.25rem;
+  }
+  
+  .logistics-planning-collection-label {
+    color: var(--muted-foreground);
+    margin-right: 0.25rem;
+  }
+  
+  .logistics-planning-collection-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .logistics-planning-collection-button {
+    padding: 0.375rem 0.75rem;
+    background-color: white;
+    border: 1px solid var(--border);
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .logistics-planning-collection-button:hover {
+    background-color: var(--input);
+  }
+  
+  .text-green {
+    color: var(--primary);
+  }
+  
+  

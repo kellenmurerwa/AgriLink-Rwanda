@@ -1,319 +1,322 @@
-import React, { useState } from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { MapPin, Search, Info } from 'lucide-react';
-import '../BuyersDashStyles/SupplyDiscovery.css';
-import { cropForecastData, cropTypes, locations } from '../BuyersDashboard/mockData';
+import { useState } from "react"
+import { Filter, MapPin, List, Search } from "lucide-react"
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "./charts/Charts.jsx"
+import "../BuyersDashStyles/supplyDiscovery.css"
 
-// Sample supplier data - in a real app, this would come from an API
-const sampleSuppliers = [
-  { id: 1, name: "Kigali Cooperative", location: "Kigali", crops: ["Rice", "Beans"], quality: "Premium", quantity: 750 },
-  { id: 2, name: "Musanze Farmers", location: "Musanze", crops: ["Beans", "Maize"], quality: "Standard", quantity: 1200 },
-  { id: 3, name: "Huye Agricultural Group", location: "Huye", crops: ["Rice"], quality: "Premium", quantity: 500 },
-  { id: 4, name: "Rubavu Growers", location: "Rubavu", crops: ["Maize"], quality: "Economy", quantity: 350 },
-  { id: 5, name: "Nyagatare Producers", location: "Nyagatare", crops: ["Rice", "Beans", "Maize"], quality: "Standard", quantity: 900 },
-];
-
-const SupplyDiscovery = () => {
-  const [selectedCrop, setSelectedCrop] = useState('All Crops');
-  const [selectedLocation, setSelectedLocation] = useState('All Locations');
-  const [selectedQuality, setSelectedQuality] = useState('All Grades');
-  const [selectedQuantity, setSelectedQuantity] = useState('Any Amount');
-  const [searchResults, setSearchResults] = useState([]);
-  const [hasSearched, setHasSearched] = useState(false);
-  const [selectedRegion, setSelectedRegion] = useState(null);
-  const [showRegionInfo, setShowRegionInfo] = useState(false);
-
-  // Define colors
-  const PRIMARY_GREEN = '#219653';
-  const SECONDARY_GREEN = '#27AE60';
-  const LIGHT_GREEN = '#6FCF97';
-
-  const handleCropFilter = (e) => {
-    setSelectedCrop(e.target.value);
-  };
-
-  const handleLocationFilter = (e) => {
-    setSelectedLocation(e.target.value);
-  };
-
-  const handleQualityFilter = (e) => {
-    setSelectedQuality(e.target.value);
-  };
-  
-  const handleQuantityFilter = (e) => {
-    setSelectedQuantity(e.target.value);
-  };
-
-  const handleSearch = () => {
-    // Filter suppliers based on criteria
-    let results = [...sampleSuppliers];
-    
-    if (selectedCrop !== 'All Crops') {
-      results = results.filter(supplier => supplier.crops.includes(selectedCrop));
-    }
-    
-    if (selectedLocation !== 'All Locations') {
-      results = results.filter(supplier => supplier.location === selectedLocation);
-    }
-    
-    if (selectedQuality !== 'All Grades') {
-      results = results.filter(supplier => supplier.quality === selectedQuality);
-    }
-    
-    if (selectedQuantity !== 'Any Amount') {
-      const range = selectedQuantity.split(' - ');
-      if (range.length === 2) {
-        const min = parseInt(range[0]);
-        const max = parseInt(range[1]);
-        results = results.filter(supplier => supplier.quantity >= min && supplier.quantity <= max);
-      } else if (selectedQuantity === '1000+') {
-        results = results.filter(supplier => supplier.quantity >= 1000);
-      }
-    }
-    
-    setSearchResults(results);
-    setHasSearched(true);
-  };
-
-  const handleRegionClick = (region) => {
-    setSelectedRegion(region);
-    setShowRegionInfo(true);
-    // Auto-select the location in the dropdown
-    if (locations.includes(region)) {
-      setSelectedLocation(region);
-    }
-  };
-
-  const handleViewSupplierDetails = (supplier) => {
-    // In a real app, this would navigate to a detailed view
-    window.open(`/suppliers/${supplier.id}`, '_blank');
-  };
+ function SupplyDiscovery() {
+  const [viewMode, setViewMode] = useState("list")
 
   return (
-    <div className='supplyDashContainer'>
-      <div className="titleContainer">
-        <h2 className="pageTitle">Supply Discovery</h2>
-        <p className="pageDescription">Explore available crops and farmer locations across Rwanda</p>
+    <div className="supply-discovery">
+      <div className="supply-discovery-header">
+        <h1 className="supply-discovery-title">Supply Discovery</h1>
+        <p className="supply-discovery-subtitle">Find and source agricultural products from farmers across Rwanda</p>
       </div>
-      
-      <div className="gridContainer">
-        {/* Interactive Map */}
-        <div className="card">
-          <h3 className="cardTitle">
-            <MapPin className="cardIcon" />
-            Supplier Locations in Rwanda
-          </h3>
-          {showRegionInfo && (
-            <div className="regionInfoOverlay">
-              <div className="regionInfoContent">
-                <h4>{selectedRegion}</h4>
-                <p>Available crops: Rice, Beans, Maize</p>
-                <p>Number of suppliers: {Math.floor(Math.random() * 20) + 5}</p>
-                <button 
-                  className="closeButton"
-                  onClick={() => setShowRegionInfo(false)}
+
+      <div className="supply-discovery-content">
+        <div className="supply-discovery-sidebar">
+          <div className="supply-discovery-card">
+            <div className="supply-discovery-card-header">
+              <h2 className="supply-discovery-card-title">
+                <Filter size={18} className="supply-discovery-card-icon" />
+                Filters
+              </h2>
+            </div>
+            <div className="supply-discovery-card-content">
+              <div className="supply-discovery-filter-group">
+                <label className="supply-discovery-filter-label">Crop Type</label>
+                <select className="supply-discovery-filter-select">
+                  <option value="all">All Crops</option>
+                  <option value="coffee">Coffee</option>
+                  <option value="tea">Tea</option>
+                  <option value="maize">Maize</option>
+                  <option value="beans">Beans</option>
+                  <option value="cassava">Cassava</option>
+                  <option value="bananas">Bananas</option>
+                </select>
+              </div>
+
+              <div className="supply-discovery-filter-group">
+                <label className="supply-discovery-filter-label">Province</label>
+                <select className="supply-discovery-filter-select">
+                  <option value="all">All Provinces</option>
+                  <option value="kigali">Kigali</option>
+                  <option value="eastern">Eastern Province</option>
+                  <option value="western">Western Province</option>
+                  <option value="northern">Northern Province</option>
+                  <option value="southern">Southern Province</option>
+                </select>
+              </div>
+
+              <div className="supply-discovery-filter-group">
+                <label className="supply-discovery-filter-label">Quantity (tons)</label>
+                <input type="range" min="0" max="100" defaultValue="50" className="supply-discovery-filter-range" />
+                <div className="supply-discovery-filter-range-labels">
+                  <span>0</span>
+                  <span>50+</span>
+                  <span>100+</span>
+                </div>
+              </div>
+
+              <div className="supply-discovery-filter-group">
+                <label className="supply-discovery-filter-label">Quality Rating</label>
+                <div className="supply-discovery-filter-rating">
+                  <span className="supply-discovery-filter-star active">★</span>
+                  <span className="supply-discovery-filter-star active">★</span>
+                  <span className="supply-discovery-filter-star active">★</span>
+                  <span className="supply-discovery-filter-star">★</span>
+                  <span className="supply-discovery-filter-star">★</span>
+                  <span className="supply-discovery-filter-rating-text">3+</span>
+                </div>
+              </div>
+
+              <div className="supply-discovery-filter-group">
+                <label className="supply-discovery-filter-label">Availability</label>
+                <select className="supply-discovery-filter-select">
+                  <option value="available">Available Now</option>
+                  <option value="upcoming">Upcoming Harvest</option>
+                  <option value="all">All</option>
+                </select>
+              </div>
+
+              <button className="btn-primary supply-discovery-filter-button">Apply Filters</button>
+            </div>
+          </div>
+
+          <div className="supply-discovery-card">
+            <div className="supply-discovery-card-header">
+              <h2 className="supply-discovery-card-title">
+                <MapPin size={18} className="supply-discovery-card-icon" />
+                Rwanda Map
+              </h2>
+            </div>
+            <div className="supply-discovery-card-content">
+              <div className="supply-discovery-map">
+                <img
+                  src="/placeholder.svg?height=300&width=240&text=Rwanda+Map"
+                  alt="Rwanda Map"
+                  className="supply-discovery-map-image"
+                />
+                <div className="supply-discovery-map-legend">
+                  <div className="supply-discovery-map-legend-item">
+                    <span className="supply-discovery-map-legend-dot" style={{ backgroundColor: "#4d7c0f" }}></span>
+                    <span>Coffee</span>
+                  </div>
+                  <div className="supply-discovery-map-legend-item">
+                    <span className="supply-discovery-map-legend-dot" style={{ backgroundColor: "#b45309" }}></span>
+                    <span>Tea</span>
+                  </div>
+                  <div className="supply-discovery-map-legend-item">
+                    <span className="supply-discovery-map-legend-dot" style={{ backgroundColor: "#0369a1" }}></span>
+                    <span>Maize</span>
+                  </div>
+                </div>
+              </div>
+              <button className="supply-discovery-map-button">View Interactive Map</button>
+            </div>
+          </div>
+        </div>
+
+        <div className="supply-discovery-main">
+          <div className="supply-discovery-card">
+            <div className="supply-discovery-card-header">
+              <h2 className="supply-discovery-card-title">Available Crops</h2>
+              <div className="supply-discovery-view-toggle">
+                <button
+                  className={`supply-discovery-view-button ${viewMode === "list" ? "active" : ""}`}
+                  onClick={() => setViewMode("list")}
                 >
-                  Close
+                  <List size={16} />
+                  List
+                </button>
+                <button
+                  className={`supply-discovery-view-button ${viewMode === "map" ? "active" : ""}`}
+                  onClick={() => setViewMode("map")}
+                >
+                  <MapPin size={16} />
+                  Map
                 </button>
               </div>
             </div>
-          )}
-          <div className="rwandaMap">
-            {/* Simple SVG map of Rwanda's provinces */}
-            <svg viewBox="0 0 400 400" className="mapSvg">
-              {/* This is a simplified map of Rwanda's provinces */}
-              <g>
-                <path 
-                  d="M150,100 L200,80 L250,100 L270,150 L250,200 L200,220 L150,200 L130,150 Z" 
-                  fill={selectedRegion === "Kigali" ? "#27AE60" : "#6FCF97"} 
-                  stroke="#219653" 
-                  strokeWidth="2"
-                  onClick={() => handleRegionClick("Kigali")}
-                  className="mapRegion"
+            <div className="supply-discovery-card-content">
+              <div className="supply-discovery-search">
+                <Search size={18} className="supply-discovery-search-icon" />
+                <input
+                  type="text"
+                  placeholder="Search crops, farmers, or locations..."
+                  className="supply-discovery-search-input"
                 />
-                <text x="200" y="150" className="mapLabel">Kigali</text>
-                
-                <path 
-                  d="M100,50 L150,100 L130,150 L100,180 L50,150 L70,100 Z" 
-                  fill={selectedRegion === "Musanze" ? "#27AE60" : "#6FCF97"}
-                  stroke="#219653" 
-                  strokeWidth="2"
-                  onClick={() => handleRegionClick("Musanze")}
-                  className="mapRegion"
-                />
-                <text x="100" y="120" className="mapLabel">Musanze</text>
-                
-                <path 
-                  d="M250,100 L300,50 L350,100 L330,150 L300,180 L270,150 Z" 
-                  fill={selectedRegion === "Nyagatare" ? "#27AE60" : "#6FCF97"}
-                  stroke="#219653" 
-                  strokeWidth="2"
-                  onClick={() => handleRegionClick("Nyagatare")}
-                  className="mapRegion"
-                />
-                <text x="300" y="120" className="mapLabel">Nyagatare</text>
-                
-                <path 
-                  d="M150,200 L200,220 L250,200 L270,250 L250,300 L200,320 L150,300 L130,250 Z" 
-                  fill={selectedRegion === "Huye" ? "#27AE60" : "#6FCF97"}
-                  stroke="#219653" 
-                  strokeWidth="2"
-                  onClick={() => handleRegionClick("Huye")}
-                  className="mapRegion"
-                />
-                <text x="200" y="260" className="mapLabel">Huye</text>
-                
-                <path 
-                  d="M50,150 L100,180 L130,250 L100,300 L50,320 L30,250 Z" 
-                  fill={selectedRegion === "Rubavu" ? "#27AE60" : "#6FCF97"}
-                  stroke="#219653" 
-                  strokeWidth="2"
-                  onClick={() => handleRegionClick("Rubavu")}
-                  className="mapRegion"
-                />
-                <text x="80" y="240" className="mapLabel">Rubavu</text>
-              </g>
-            </svg>
-            <button 
-              onClick={() => window.open('https://www.google.com/maps/place/Rwanda', '_blank')} 
-              className="mapButton"
-            >
-              Open full map
-            </button>
-          </div>
-        </div>
+              </div>
 
-        {/* Harvest Forecast */}
-        <div className="card">
-          <h3 className="cardTitle">Crop Harvest Forecast</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <AreaChart data={cropForecastData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="month" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Area type="monotone" dataKey="rice" stackId="1" stroke={PRIMARY_GREEN} fill={PRIMARY_GREEN} />
-              <Area type="monotone" dataKey="beans" stackId="1" stroke={SECONDARY_GREEN} fill={SECONDARY_GREEN} />
-              <Area type="monotone" dataKey="maize" stackId="1" stroke={LIGHT_GREEN} fill={LIGHT_GREEN} />
-            </AreaChart>
-          </ResponsiveContainer>
-        </div>
-
-        {/* Crop Filters */}
-        <div className="cardWide">
-          <h3 className="cardTitle">Available Crops</h3>
-          <div className="filtersContainer">
-            <div className="filterGroup">
-              <label className="filterLabel">Crop Type</label>
-              <select 
-                className="filterSelect"
-                value={selectedCrop}
-                onChange={handleCropFilter}
-              >
-                {cropTypes.map(crop => (
-                  <option key={crop} value={crop}>{crop}</option>
-                ))}
-              </select>
-            </div>
-            <div className="filterGroup">
-              <label className="filterLabel">Location</label>
-              <select 
-                className="filterSelect"
-                value={selectedLocation}
-                onChange={handleLocationFilter}
-              >
-                {locations.map(location => (
-                  <option key={location} value={location}>{location}</option>
-                ))}
-              </select>
-            </div>
-            <div className="filterGroup">
-              <label className="filterLabel">Quality Grade</label>
-              <select 
-                className="filterSelect"
-                value={selectedQuality}
-                onChange={handleQualityFilter}
-              >
-                <option>All Grades</option>
-                <option>Premium</option>
-                <option>Standard</option>
-                <option>Economy</option>
-              </select>
-            </div>
-            <div className="filterGroup">
-              <label className="filterLabel">Quantity (kg)</label>
-              <select 
-                className="filterSelect"
-                value={selectedQuantity}
-                onChange={handleQuantityFilter}
-              >
-                <option>Any Amount</option>
-                <option>100 - 500</option>
-                <option>500 - 1000</option>
-                <option>1000+</option>
-              </select>
-            </div>
-          </div>
-          <button 
-            onClick={handleSearch}
-            className="searchButton"
-          >
-            <Search size={16} className="buttonIcon" />
-            Search Suppliers
-          </button>
-        </div>
-
-        {/* Search Results - Only shown after search */}
-        {hasSearched && (
-          <div className="cardWide resultsCard">
-            <h3 className="cardTitle">Search Results</h3>
-            {searchResults.length > 0 ? (
-              <div className="resultsGrid">
-                {searchResults.map(supplier => (
-                  <div key={supplier.id} className="supplierCard">
-                    <div className="supplierHeader">
-                      <h4 className="supplierName">{supplier.name}</h4>
-                      <span className="supplierLocation">
-                        <MapPin size={14} className="locationIcon" />
-                        {supplier.location}
-                      </span>
-                    </div>
-                    <div className="supplierDetails">
-                      <div className="detailItem">
-                        <span className="detailLabel">Crops:</span>
-                        <span className="detailValue">{supplier.crops.join(", ")}</span>
+              {viewMode === "list" ? (
+                <div className="supply-discovery-products">
+                  {[
+                    {
+                      id: 1,
+                      name: "Arabica Coffee",
+                      farmer: "Musanze Coffee Cooperative",
+                      location: "Musanze, Northern",
+                      quantity: "50 tons",
+                      price: "4,500 RWF/kg",
+                      rating: 4.8,
+                      image: "/placeholder.svg?height=200&width=300&text=Coffee",
+                    },
+                    {
+                      id: 2,
+                      name: "Green Tea Leaves",
+                      farmer: "Eastern Tea Growers",
+                      location: "Nyagatare, Eastern",
+                      quantity: "30 tons",
+                      price: "2,800 RWF/kg",
+                      rating: 4.5,
+                      image: "/placeholder.svg?height=200&width=300&text=Tea",
+                    },
+                    {
+                      id: 3,
+                      name: "Organic Maize",
+                      farmer: "Southern Maize Farmers",
+                      location: "Huye, Southern",
+                      quantity: "80 tons",
+                      price: "350 RWF/kg",
+                      rating: 4.3,
+                      image: "/placeholder.svg?height=200&width=300&text=Maize",
+                    },
+                    {
+                      id: 4,
+                      name: "Red Beans",
+                      farmer: "Karongi Bean Producers",
+                      location: "Karongi, Western",
+                      quantity: "45 tons",
+                      price: "600 RWF/kg",
+                      rating: 4.6,
+                      image: "/placeholder.svg?height=200&width=300&text=Beans",
+                    },
+                    {
+                      id: 5,
+                      name: "Fresh Cassava",
+                      farmer: "Rwamagana Cassava Coop",
+                      location: "Rwamagana, Eastern",
+                      quantity: "60 tons",
+                      price: "280 RWF/kg",
+                      rating: 4.2,
+                      image: "/placeholder.svg?height=200&width=300&text=Cassava",
+                    },
+                    {
+                      id: 6,
+                      name: "Green Bananas",
+                      farmer: "Rubavu Banana Growers",
+                      location: "Rubavu, Western",
+                      quantity: "40 tons",
+                      price: "320 RWF/kg",
+                      rating: 4.4,
+                      image: "/placeholder.svg?height=200&width=300&text=Bananas",
+                    },
+                  ].map((product) => (
+                    <div key={product.id} className="supply-discovery-product-card">
+                      <div className="supply-discovery-product-image">
+                        <img src={product.image || "/placeholder.svg"} alt={product.name} />
+                        <span className="supply-discovery-product-badge">Available</span>
                       </div>
-                      <div className="detailItem">
-                        <span className="detailLabel">Quality:</span>
-                        <span className="detailValue">{supplier.quality}</span>
-                      </div>
-                      <div className="detailItem">
-                        <span className="detailLabel">Quantity:</span>
-                        <span className="detailValue">{supplier.quantity} kg</span>
+                      <div className="supply-discovery-product-content">
+                        <h3 className="supply-discovery-product-title">{product.name}</h3>
+                        <div className="supply-discovery-product-rating">
+                          <span className="supply-discovery-product-rating-stars">
+                            {"★".repeat(Math.floor(product.rating))}
+                          </span>
+                          <span className="supply-discovery-product-rating-value">{product.rating}</span>
+                        </div>
+                        <div className="supply-discovery-product-details">
+                          <p>Quantity: {product.quantity}</p>
+                          <p>Location: {product.location}</p>
+                          <p>Farmer: {product.farmer}</p>
+                        </div>
+                        <div className="supply-discovery-product-footer">
+                          <span className="supply-discovery-product-price">{product.price}</span>
+                          <button className="btn-primary supply-discovery-product-button">View Details</button>
+                        </div>
                       </div>
                     </div>
-                    <button 
-                      className="viewDetailsButton"
-                      onClick={() => handleViewSupplierDetails(supplier)}
-                    >
-                      View Details
-                    </button>
+                  ))}
+                </div>
+              ) : (
+                <div className="supply-discovery-map-view">
+                  <img
+                    src="/placeholder.svg?height=600&width=800&text=Interactive+Rwanda+Map"
+                    alt="Rwanda Interactive Map"
+                    className="supply-discovery-map-view-image"
+                  />
+                  <div className="supply-discovery-map-view-overlay">
+                    <p>Interactive map showing farmer locations and available produce across Rwanda</p>
+                    <button className="btn-primary">Enable Location Services</button>
                   </div>
-                ))}
-              </div>
-            ) : (
-              <div className="noResults">
-                <Info size={32} className="noResultsIcon" />
-                <p className="noResultsText">No suppliers found matching your criteria.</p>
-                <p className="noResultsSuggestion">Try adjusting your filters or selecting a different location.</p>
-              </div>
-            )}
+                </div>
+              )}
+            </div>
           </div>
-        )}
+
+          <div className="supply-discovery-card">
+            <div className="supply-discovery-card-header">
+              <h2 className="supply-discovery-card-title">Harvest Forecasts</h2>
+              <select className="supply-discovery-card-select">
+                <option>By Region</option>
+                <option>By Crop</option>
+              </select>
+            </div>
+            <div className="supply-discovery-card-content">
+              <div className="supply-discovery-chart" style={{ height: "300px" }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      { name: "Jan", Coffee: 400, Tea: 240, Maize: 240 },
+                      { name: "Feb", Coffee: 300, Tea: 139, Maize: 221 },
+                      { name: "Mar", Coffee: 200, Tea: 980, Maize: 229 },
+                      { name: "Apr", Coffee: 278, Tea: 390, Maize: 200 },
+                      { name: "May", Coffee: 189, Tea: 480, Maize: 218 },
+                      { name: "Jun", Coffee: 239, Tea: 380, Maize: 250 },
+                      { name: "Jul", Coffee: 349, Tea: 430, Maize: 210 },
+                    ]}
+                    margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="Coffee" fill="#4d7c0f" />
+                    <Bar dataKey="Tea" fill="#b45309" />
+                    <Bar dataKey="Maize" fill="#0369a1" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+
+              <div className="supply-discovery-forecast-summary">
+                <div className="supply-discovery-forecast-item">
+                  <h3 className="supply-discovery-forecast-title">Coffee</h3>
+                  <div className="supply-discovery-forecast-value">12,500 tons</div>
+                  <div className="supply-discovery-forecast-period">Expected in next 30 days</div>
+                  <div className="supply-discovery-forecast-change positive">+15% vs last year</div>
+                </div>
+
+                <div className="supply-discovery-forecast-item">
+                  <h3 className="supply-discovery-forecast-title">Tea</h3>
+                  <div className="supply-discovery-forecast-value">8,750 tons</div>
+                  <div className="supply-discovery-forecast-period">Expected in next 30 days</div>
+                  <div className="supply-discovery-forecast-change positive">+8% vs last year</div>
+                </div>
+
+                <div className="supply-discovery-forecast-item">
+                  <h3 className="supply-discovery-forecast-title">Maize</h3>
+                  <div className="supply-discovery-forecast-value">9,200 tons</div>
+                  <div className="supply-discovery-forecast-period">Expected in next 30 days</div>
+                  <div className="supply-discovery-forecast-change positive">+12% vs last year</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default SupplyDiscovery;

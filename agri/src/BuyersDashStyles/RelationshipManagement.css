@@ -1,407 +1,437 @@
-.dashboard-container {
-  position: absolute;
-  top: 90px; 
-  left: 320px; 
-  right: 20px;
-  padding: 0;
-  margin: 0;
-  background-color: #f5f7fa;
-}
-
-/* Header section */
-.title-container {
-  background-color: #f8f9fb;
-  padding: 24px 32px;
-  border-radius: 10px;
-  margin-bottom: 24px;
-}
-
-.page-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
-  margin: 0 0 8px 0;
-}
-
-.page-description {
-  color: #666;
-  margin: 0;
-  font-size: 16px;
-}
-
-/* Grid layout for cards */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  padding: 0 20px;
-}
-
-/* Card styling for better readability */
-.dashboard-card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  padding: 24px;
-  height: 100%;
+.relationship-management {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 }
 
-.dashboard-card-wide {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  padding: 24px;
-  grid-column: 1 / -1;
-  margin-bottom: 24px;
+.relationship-management-header {
+  margin-bottom: 1rem;
 }
 
-.card-title {
-  font-size: 18px;
+.relationship-management-title {
+  font-size: 1.5rem;
   font-weight: 600;
-  color: #333;
-  margin: 0 0 20px 0;
-  display: flex;
-  align-items: center;
+  margin: 0 0 0.5rem 0;
 }
 
-/* Farmer grid layout */
-.farmers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.farmer-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 20px;
-  background-color: #fafafa;
-}
-
-/* Farmer card content */
-.farmer-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.farmer-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(33, 150, 83, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 12px;
-}
-
-.farmer-avatar-icon {
-  color: #219653;
-}
-
-.farmer-name {
-  font-weight: 600;
-  margin: 0 0 4px 0;
-  color: #333;
-}
-
-.farmer-type {
-  font-size: 14px;
-  color: #666;
+.relationship-management-subtitle {
+  color: var(--muted-foreground);
   margin: 0;
 }
 
-.farmer-info {
+.relationship-management-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .relationship-management-content {
+    flex-direction: row;
+  }
+
+  .relationship-management-main {
+    flex: 1;
+  }
+
+  .relationship-management-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+  }
+}
+
+.relationship-management-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.relationship-management-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.relationship-management-card-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.relationship-management-card-title {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.relationship-management-card-icon {
+  margin-right: 0.5rem;
+  color: #7c3aed;
+}
+
+.relationship-management-add-button {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  background-color: #7c3aed;
+}
+
+.relationship-management-add-button:hover {
+  background-color: #6d28d9;
+}
+
+.relationship-management-card-select {
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  background-color: white;
+  font-size: 0.875rem;
+}
+
+.relationship-management-card-content {
+  padding: 1.5rem;
+}
+
+.relationship-management-search {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.relationship-management-search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-foreground);
+}
+
+.relationship-management-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  background-color: var(--input);
+  font-size: 0.875rem;
+}
+
+.relationship-management-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.relationship-management-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.relationship-management-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  border-bottom: 1px solid var(--border);
+}
+
+.relationship-management-table td {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.relationship-management-table tr:last-child td {
+  border-bottom: none;
+}
+
+.relationship-management-table .text-right {
+  text-align: right;
+}
+
+.relationship-management-farmer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.relationship-management-farmer-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.relationship-management-farmer-name {
+  font-weight: 500;
+}
+
+.relationship-management-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.relationship-management-rating-star {
+  color: #f59e0b;
+  fill: #f59e0b;
+}
+
+.relationship-management-actions {
+  position: relative;
+  display: inline-block;
+}
+
+.relationship-management-action-button {
+  background: none;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.relationship-management-action-button:hover {
+  background-color: var(--input);
+}
+
+.relationship-management-action-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 180px;
+  background-color: white;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: none;
+}
+
+.relationship-management-actions:hover .relationship-management-action-menu {
+  display: block;
+}
+
+.relationship-management-action-menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.relationship-management-action-menu-item:hover {
+  background-color: var(--input);
+}
+
+.relationship-management-action-menu-item.text-red {
+  color: #dc2626;
+}
+
+.relationship-management-chart {
+  width: 100%;
+}
+
+.relationship-management-metrics {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .relationship-management-metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.relationship-management-metric-card {
+  padding: 1rem;
+  background-color: var(--input);
+  border-radius: 0.375rem;
+}
+
+.relationship-management-metric-title {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.relationship-management-metric-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.relationship-management-metric-change {
+  font-size: 0.75rem;
+}
+
+.relationship-management-metric-change.positive {
+  color: #16a34a;
+}
+
+.relationship-management-metric-change.negative {
+  color: #dc2626;
+}
+
+.relationship-management-contract-summary {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-  font-size: 14px;
+  margin-bottom: 1.5rem;
 }
 
-.farmer-location {
-  display: flex;
-  align-items: center;
-  color: #666;
-}
-
-.location-icon {
-  margin-right: 6px;
-  color: #666;
-}
-
-.farmer-rating {
-  color: #F2C94C;
-  font-weight: 600;
-}
-
-.farmer-actions {
-  display: flex;
-  gap: 12px;
-}
-
-.view-profile-button, .contact-button {
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  flex: 1;
-  border: none;
+.relationship-management-contract-stat {
   text-align: center;
 }
 
-.view-profile-button {
-  background-color: rgba(33, 150, 83, 0.1);
-  color: #219653;
+.relationship-management-contract-stat-title {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin-bottom: 0.25rem;
 }
 
-.contact-button {
-  background-color: #219653;
-  color: white;
+.relationship-management-contract-stat-value {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .dashboard-container {
-    left: 280px;
-  }
+.relationship-management-contract-stat-value.text-amber {
+  color: var(--secondary);
 }
 
-@media (max-width: 992px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .dashboard-container {
-    left: 250px;
-  }
+.relationship-management-contract-stat-value.text-red {
+  color: #dc2626;
 }
 
-@media (max-width: 768px) {
-  .farmers-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .dashboard-card, .dashboard-card-wide {
-    padding: 20px;
-  }
-  
-  .page-title {
-    font-size: 22px;
-  }
-  
-  .dashboard-container {
-    left: 0;
-    padding: 16px;
-  }
+.relationship-management-contract-list {
+  margin-bottom: 1.5rem;
 }
 
+.relationship-management-contract-list-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem 0;
+}
 
-/* -------------------------------------------------------------- */
-/* Messenger Overlay */
-.messenger-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+.relationship-management-contract-item {
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 1000;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background-color: var(--input);
+  border-radius: 0.375rem;
+  margin-bottom: 0.5rem;
 }
 
-.messenger-container {
-  width: 400px;
-  height: 500px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+.relationship-management-contract-item-name {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
 }
 
-.messenger-header {
+.relationship-management-contract-item-details {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.relationship-management-button {
+  width: 100%;
+  margin-top: 0.5rem;
+  background-color: #7c3aed;
+}
+
+.relationship-management-button:hover {
+  background-color: #6d28d9;
+}
+
+.relationship-management-communication-summary {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background-color: #0b4424;
-  color: white;
+  margin-bottom: 1.5rem;
 }
 
-.messenger-header h3 {
-  margin: 0;
-  font-size: 18px;
-  color: #ffff;
+.relationship-management-communication-stat {
+  text-align: center;
 }
 
-.close-messenger {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 5px;
+.relationship-management-communication-stat-title {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin-bottom: 0.25rem;
+}
+
+.relationship-management-communication-stat-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.relationship-management-message-list {
+  margin-bottom: 1.5rem;
+}
+
+.relationship-management-message-list-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem 0;
+}
+
+.relationship-management-message-item {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: var(--input);
+  border-radius: 0.375rem;
+  margin-bottom: 0.5rem;
 }
 
-.messages-container {
-  flex: 1;
-  padding: 15px;
-  overflow-y: auto;
-  background-color: #f8f8f8;
-  display: flex;
-  flex-direction: column;
-}
-
-.no-messages {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  color: #888;
-  font-style: italic;
-}
-
-.message {
-  max-width: 70%;
-  margin-bottom: 10px;
-  display: flex;
-}
-
-.message.sent {
-  align-self: flex-end;
-}
-
-.message.received {
-  align-self: flex-start;
-}
-
-.message-content {
-  padding: 10px 15px;
-  border-radius: 18px;
-  position: relative;
-}
-
-.message.sent .message-content {
-  background-color: #219653;
-  color: white;
-  border-bottom-right-radius: 4px;
-}
-
-.message.received .message-content {
-  background-color: white;
-  color: #333;
-  border-bottom-left-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.message-content p {
-  margin: 0 0 15px 0;
-}
-
-.message-time {
-  font-size: 11px;
-  position: absolute;
-  bottom: 4px;
-  right: 10px;
-  opacity: 0.8;
-}
-
-.message-input-container {
-  display: flex;
-  padding: 10px;
-  background-color: white;
-  border-top: 1px solid #eee;
-}
-
-.message-input {
-  flex: 1;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  padding: 8px 15px;
-  resize: none;
-  height: 40px;
-  font-family: inherit;
-  line-height: 20px;
-}
-
-.send-message-button {
+.relationship-management-message-item-image {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #219653;
-  color: white;
-  border: none;
-  margin-left: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
 }
 
-.send-message-button:hover {
-  background-color: #1b7a44;
+.relationship-management-message-item-content {
+  flex: 1;
+  min-width: 0;
 }
 
-.farmer-actions {
+.relationship-management-message-item-header {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-bottom: 0.25rem;
 }
 
-.view-profile-button, .contact-button {
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  border: none;
+.relationship-management-message-item-name {
+  font-weight: 500;
 }
 
-.view-profile-button {
-  background-color: #f2f2f2;
-  color: #333;
+.relationship-management-message-item-time {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
 }
 
-.contact-button {
-  background-color: #219653;
-  color: white;
+.relationship-management-message-item-text {
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.view-profile-button:hover {
-  background-color: #e6e6e6;
+.badge-purple {
+  background-color: rgba(124, 58, 237, 0.1);
+  color: #7c3aed;
 }
 
-.contact-button:hover {
-  background-color: #1b7a44;
+.badge-gray {
+  background-color: rgba(107, 114, 128, 0.1);
+  color: #6b7280;
 }
 
-@media (max-width: 768px) {
-  .dashboard-container {
-    left: 0;
-    padding: 16px;
-  }
-
-  .messenger-container {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-  }
-
-  .message-input {
-    font-size: 14px;
-  }
-
-  .send-message-button {
-    width: 35px;
-    height: 35px;
-  }
-}

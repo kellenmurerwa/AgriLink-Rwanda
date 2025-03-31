@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../BuyersDashStyles/SideNav.css';
 import AgriLink_Logo from '../assets/AgriLink_Logo.png';
-import { ShoppingBag, Calendar, Truck, Users, Menu } from 'lucide-react';  
+import { Home, ShoppingBag, Calendar, Truck, Users, Menu } from 'lucide-react';  
 
 const SideNav = ({ sidebarOpen, setSidebarOpen }) => {
   return (
@@ -20,8 +20,9 @@ const SideNav = ({ sidebarOpen, setSidebarOpen }) => {
         </button> 
       </div>
       
-      {/* Sidebar Content with Links */}
+      {/* Sidebar Content with Links  buyersoverview*/}
       <div className="sidebarContent">
+        <SidebarItem icon={<Home size={20} />} text="Dashboard Overview" path="/buyersoverview" sidebarOpen={sidebarOpen} />
         <SidebarItem icon={<Calendar size={20} />} text="Transaction Management" path="/transactions" sidebarOpen={sidebarOpen} />
         <SidebarItem icon={<ShoppingBag size={20} />} text="Supply Discovery" path="/supply" sidebarOpen={sidebarOpen} />
         <SidebarItem icon={<Truck size={20} />} text="Logistics Planning" path="/logistics" sidebarOpen={sidebarOpen} />
