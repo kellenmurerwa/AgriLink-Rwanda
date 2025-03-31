@@ -1,218 +1,328 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f7fc;
+.transaction-management {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.transaction-management-header {
+  margin-bottom: 1rem;
+}
+
+.transaction-management-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.transaction-management-subtitle {
+  color: var(--muted-foreground);
   margin: 0;
-  padding: 0;
-  /* box-sizing: border-box; */
 }
 
-/* Dashboard container */
-.dashboard-container {
-  max-width: 1300px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #f4f7fc;
-  /* border-radius: 10px; */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-}
-
-/* Title and header */
-.dashboard-container h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #0e0e0e;
-}
-
-h3 {
-  font-size: 20px;
-  margin-bottom: 30px;
-  color: #4CAF50;
-}
-
-/* Product Search Section */
-.product-search {
-  margin-bottom: 30px;
-}
-
-.product-search input {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-}
-
-.product-search input:focus {
-  outline: none;
-  border-color: #4CAF50;
-}
-
-/* Product List */
-.product-list {
+.transaction-management-content {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  list-style-type: none;
-  padding: 0;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.product-list li {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  width: calc(33.333% - 20px);
-  padding: 15px;
-  box-sizing: border-box;
-  text-align: center;
+@media (min-width: 1024px) {
+  .transaction-management-content {
+    flex-direction: row;
+  }
+
+  .transaction-management-main {
+    flex: 1;
+  }
+
+  .transaction-management-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+  }
 }
 
-.product-list h4 {
-  font-size: 20px;
-  margin: 10px 0;
-  color: #333;
+.transaction-management-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
 }
 
-.product-list p {
-  font-size: 16px;
-  margin: 5px 0;
-  color: #777;
-}
-
-.product-list button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Cart Section */
-h3 + ul {
-  margin-bottom: 30px;
-}
-
-ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-.product-list li {
-  background-color: #f9f9f9;
-  padding: 12px;
-  margin-bottom: 8px;
-  border-radius: 5px;
+.transaction-management-card-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
-ul li:last-child {
-  margin-bottom: 0;
+.transaction-management-card-title-wrapper {
+  display: flex;
+  align-items: center;
 }
 
-/* Transaction Table */
-.transaction-table {
+.transaction-management-card-title {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.transaction-management-card-icon {
+  margin-right: 0.5rem;
+  color: var(--secondary);
+}
+
+.transaction-management-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.transaction-management-card-action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  background-color: white;
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.transaction-management-card-action-button:hover {
+  background-color: var(--input);
+}
+
+.transaction-management-card-select {
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  background-color: white;
+  font-size: 0.875rem;
+}
+
+.transaction-management-card-content {
+  padding: 1.5rem;
+}
+
+.transaction-management-search-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.transaction-management-search {
+  position: relative;
+  flex: 1;
+}
+
+.transaction-management-search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-foreground);
+}
+
+.transaction-management-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  background-color: var(--input);
+  font-size: 0.875rem;
+}
+
+.transaction-management-select {
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  background-color: white;
+  font-size: 0.875rem;
+  min-width: 180px;
+}
+
+.transaction-management-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.transaction-management-table table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 30px;
-  margin-bottom: 30px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
 
-.transaction-table th,
-.transaction-table td {
-  padding: 12px;
+.transaction-management-table th {
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  border-bottom: 1px solid var(--border);
 }
 
-.transaction-table th {
-  background-color: #f4f7fc;
-  font-weight: bold;
-  color: #333;
+.transaction-management-table td {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--border);
 }
 
-.transaction-table td {
-  color: #555;
+.transaction-management-table tr:last-child td {
+  border-bottom: none;
 }
 
-.transaction-table tr:hover {
-  background-color: #f1f1f1;
+.transaction-management-table .text-right {
+  text-align: right;
 }
 
-/* Transaction payment methods */
-.transaction-payment {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.transaction-management-table .font-medium {
+  font-weight: 500;
 }
 
-.transaction-payment select {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  width: 45%;
-  box-sizing: border-box;
+.transaction-management-table .text-green {
+  color: var(--primary);
+  font-weight: 500;
 }
 
-.transaction-payment button {
-  background-color: #4CAF50;
-  color: white;
+.transaction-management-view-button {
+  background: none;
   border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 5px;
+  color: var(--secondary);
+  font-size: 0.875rem;
   cursor: pointer;
 }
-/* Graph Section */
-.responsive-container {
-  margin-bottom: 40px;
+
+.transaction-management-chart {
+  width: 100%;
 }
 
-/* Spacing Adjustments */
-@media (max-width: 768px) {
-  .product-list li {
-    width: calc(50% - 20px);
-  }
+.transaction-management-trends {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
 
-  .transaction-payment {
-    flex-direction: column;
-  }
-
-  .transaction-payment select,
-  .transaction-payment button {
-    width: 100%;
-    margin-bottom: 10px;
+@media (min-width: 640px) {
+  .transaction-management-trends {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 480px) {
-  .product-list li {
-    width: 100%;
-  }
-
-  .product-search input {
-    font-size: 14px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  h3 {
-    font-size: 20px;
-  }
-
-  .transaction-table th,
-  .transaction-table td {
-    padding: 10px;
-  }
+.transaction-management-trend-card {
+  padding: 1rem;
+  background-color: var(--input);
+  border-radius: 0.375rem;
 }
+
+.transaction-management-trend-title {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.transaction-management-trend-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.transaction-management-trend-change {
+  font-size: 0.75rem;
+}
+
+.transaction-management-trend-change.positive {
+  color: #16a34a;
+}
+
+.transaction-management-trend-change.negative {
+  color: #dc2626;
+}
+
+.transaction-management-summary {
+  margin-bottom: 1.5rem;
+}
+
+.transaction-management-summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.transaction-management-summary-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.transaction-management-summary-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.transaction-management-summary-value.text-amber {
+  color: var(--secondary);
+}
+
+.transaction-management-summary-value.text-green {
+  color: var(--primary);
+}
+
+.transaction-management-summary-value.text-red {
+  color: #dc2626;
+}
+
+.transaction-management-verification {
+  margin-bottom: 1.5rem;
+}
+
+.transaction-management-verification-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.transaction-management-verification-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+.transaction-management-verification-icon.green {
+  background-color: rgba(77, 124, 15, 0.1);
+  color: var(--primary);
+}
+
+.transaction-management-verification-icon.amber {
+  background-color: rgba(180, 83, 9, 0.1);
+  color: var(--secondary);
+}
+
+.transaction-management-verification-icon.red {
+  background-color: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+}
+
+.transaction-management-verification-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+.transaction-management-verification-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.transaction-management-button {
+  width: 100%;
+}
+
