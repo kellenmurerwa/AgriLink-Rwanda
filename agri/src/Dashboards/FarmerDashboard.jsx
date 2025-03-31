@@ -137,7 +137,7 @@ function FarmerDashboard() {
 
         <div className="dashboard-grid">
           {/* Left sidebar with key metrics */}
-          <div className="sidebar">
+          {/* <div className="sidebar">
             <div className="metric-card green">
               <div className="card-header">
                 <h2 className="card-title">Total Area</h2>
@@ -203,7 +203,7 @@ function FarmerDashboard() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Main content area */}
           <div className="main-content">

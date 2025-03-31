@@ -3,39 +3,106 @@
   display: flex;
   width: 100%;
   height: 100vh;
-  overflow: auto; /* Allow scrolling if content is too large */
+  overflow: hidden; /* Prevent outer scrolling */
+  position: relative;
 }
 
 .sideNavBar {
-  position: fixed  !important; 
+  position: fixed !important;
   top: 0;
   bottom: 0;
+  left: 0;
   width: 16rem;
-  z-index: 100!important; 
+  z-index: 100 !important;
   height: 100vh;
+  background-color: #2c6e2d; /* Match the green in your screenshot */
+  color: white;
+  transition: width 0.3s ease;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+.dashNavBar {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  left: 16rem;
+  height: 60px; /* Fixed height for navbar */
+  background-color: #2c6e2d;
+  color: white;
+  z-index: 99 !important;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  transition: left 0.3s ease;
 }
 
 .contentArea {
   margin-left: 16rem;
+  margin-top: 60px; /* Match navbar height */
   width: calc(100% - 16rem);
-  z-index: 10;
+  height: calc(100vh - 60px);
+  transition: margin-left 0.3s ease, width 0.3s ease;
 }
 
 .contentContainer {
-  flex: 1;
   padding: 20px;
-  background-color: #fff;
+  background-color: #f5f5f5;
+  height: 100%;
   overflow-y: auto;
-  width: 83% !important; 
+  overflow-x: hidden;
 }
 
+/* Dashboard grid layout */
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Card styling */
+.dashboardCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eee;
+}
+
+.cardContent {
+  padding: 15px;
+}
+
+/* Media queries for responsive layout */
 @media (max-width: 768px) {
   .sideNavBar {
-    width: 5rem; 
+    width: 5rem;
   }
-
+  
+  .dashNavBar {
+    left: 5rem;
+  }
+  
   .contentArea {
-    margin-left: 5rem; 
+    margin-left: 5rem;
     width: calc(100% - 5rem);
+  }
+  
+  .dashboardGrid {
+    grid-template-columns: 1fr;
   }
 }
