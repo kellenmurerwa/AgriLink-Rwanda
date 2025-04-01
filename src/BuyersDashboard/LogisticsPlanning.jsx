@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Calendar, Clock, MapPin, MoreHorizontal, Route, Truck, Warehouse } from "lucide-react"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "../Charts/Charts.jsx"
-import "../BuyersDashStyles/logisticsPlanning.css"
+import "../BuyersDashStyles/LogisticsPlanning.css"
 
  function LogisticsPlanning() {
   const [activeTab, setActiveTab] = useState("map")

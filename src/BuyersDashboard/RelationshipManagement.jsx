@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { FileText, MessageSquare, MoreHorizontal, Search, Star, Users } from "lucide-react"
 import {
