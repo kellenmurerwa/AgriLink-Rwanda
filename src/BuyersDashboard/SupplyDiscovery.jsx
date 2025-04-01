@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Filter, MapPin, List, Search } from "lucide-react"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "../Charts/Charts.jsx"
-import "../BuyersDashStyles/supplyDiscovery.css"
+import "../BuyersDashStyles/SupplyDiscovery.css"
 
  function SupplyDiscovery() {
   const [viewMode, setViewMode] = useState("list")
