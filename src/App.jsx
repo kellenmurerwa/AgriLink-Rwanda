@@ -22,6 +22,12 @@ import AgroLayout from './AgronomistDashboard/AgroLayout';
 import AgroDash from './AgronomistDashboard/AgroDash';
 
 import AgroSoilAnalysis from './AgronomistDashboard/AgroSoilAnalysis';
+import Calendar from "./AgronomistDashboard/Calendar"
+import Alerts from "./AgronomistDashboard/Alerts"
+import Performance from "./AgronomistDashboard/Performace"
+import Pests from "./AgronomistDashboard/Pests"
+import Climate from "./AgronomistDashboard/Climate"
+import Practices from "./AgronomistDashboard/Practices"
 
 import LayoutDash from './Dashboards/LayoutDash';
 import MessagingHub from './Dashboards/MessagingHub';
@@ -78,8 +84,13 @@ function App() {
         <Route path='/' element ={<AgroLayout/>}>
         <Route index element={<AgroDash />} />
         <Route path="/agrodash" element={<AgroDash />} />
-        <Route path="/agrosoilanalysis" element={<AgroSoilAnalysis />} />
-        
+        <Route path="/farmers" element={<AgroSoilAnalysis />} />
+        <Route path="/calendar" element={<Calendar />} />
+            <Route path="/alerts" element={<Alerts />} />
+            <Route path="/performance" element={<Performance />} />
+            <Route path="/pests" element={<Pests />} />
+            <Route path="/climate" element={<Climate />} />
+            <Route path="/practices" element={<Practices/>} />
 
         </Route>
         </Routes>

@@ -1,0 +1,256 @@
+
+.alertsContainer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: max-content;
+  width: 100% !important;
+}
+
+.alertsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.alertsTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #2e7d32;
+}
+
+.alertsTitle h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.alertsActions {
+  display: flex;
+  gap: 10px;
+}
+
+.filterContainer {
+  position: relative;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center !important;
+  gap: 6px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #495057;
+}
+
+.filterButton:hover {
+  background-color: #e9ecef;
+}
+
+.filterMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 180px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.filterOption {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 15px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #495057;
+}
+
+.filterOption:hover {
+  background-color: #f8f9fa;
+}
+
+.filterOption.active {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+.alertsList {
+  width: 100%;
+}
+
+.alertItem {
+  position: relative;
+  border-left: 4px solid transparent;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  
+}
+
+.alertItem:last-child {
+  border-bottom: none;
+}
+
+.alertItem.critical {
+  border-left-color: #f44336;
+}
+
+.alertItem.warning {
+  border-left-color: #ff9800;
+}
+
+.alertItem.info {
+  border-left-color: #2196f3;
+}
+
+.alertItemContent {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.alertIcon {
+  margin-right: 15px;
+}
+
+.alertItem.critical .alertIcon {
+  color: #f44336;
+}
+
+.alertItem.warning .alertIcon {
+  color: #ff9800;
+}
+
+.alertItem.info .alertIcon {
+  color: #2196f3;
+}
+
+.alertInfo {
+  flex: 1;
+}
+
+.alertInfo h3 {
+  margin: 0 0 5px 0;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.alertMeta {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.farmerId {
+  font-weight: 500;
+}
+
+.alertDate {
+  font-size: 12px;
+  color: #888;
+}
+
+.alertActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.markReadButton, .dismissButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.markReadButton:hover, .dismissButton:hover {
+  background-color: #f0f0f0;
+  color: #2e7d32;
+}
+
+.alertMessage {
+  padding: 0 20px 15px 60px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.alertActionButtons {
+  margin-top: 10px;
+}
+
+.takeActionButton {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.takeActionButton:hover {
+  background-color: #1b5e20;
+}
+
+.noAlerts {
+  text-align: center;
+  padding: 40px 0;
+  color: #6c757d;
+}
+
+.alertItem.read {
+  opacity: 0.7;
+}
+
+.alertItem.unread {
+  background-color: #fafafa;
+}
+
+@media (max-width: 768px) {
+  .alertsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .alertsActions {
+    width: 100%;
+  }
+  
+  .alertItemContent {
+    flex-wrap: wrap;
+  }
+  
+  .alertInfo {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  
+  .alertMeta {
+    margin-right: 0;
+    flex: 1;
+  }
+}

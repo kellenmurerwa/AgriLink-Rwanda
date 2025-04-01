@@ -1,0 +1,438 @@
+.pestsContainer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .pestsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .pestsTitle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #2e7d32;
+  }
+  
+  .pestsTitle h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .pestsActions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .searchContainer {
+    position: relative;
+    min-width: 250px;
+  }
+  
+  .searchContainer input {
+    width: 100%;
+    padding: 8px 12px 8px 36px;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .searchContainer svg {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+  }
+  
+  .filterContainer {
+    position: relative;
+  }
+  
+  .filterContainer select {
+    padding: 8px 36px 8px 12px;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    font-size: 14px;
+    appearance: none;
+    background-color: #f8f9fa;
+    cursor: pointer;
+  }
+  
+  .filterContainer svg {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    pointer-events: none;
+  }
+  
+  .addButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .addButton:hover {
+    background-color: #1b5e20;
+  }
+  
+  .pestsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .pestCard {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .pestCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pestImage {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+  }
+  
+  .pestImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .severityBadge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+  }
+  
+  .severityBadge.large {
+    position: static;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .pestInfo {
+    padding: 15px;
+  }
+  
+  .pestInfo h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2e7d32;
+  }
+  
+  .pestCategory {
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .pestCrops {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .pestSymptoms {
+    font-size: 14px;
+    color: #495057;
+    display: -webkit-box;
+   
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  .noPests {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    color: #6c757d;
+    gap: 15px;
+  }
+  
+  /* Modal styles */
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background-color: white;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .pestDetailModal {
+    width: 700px;
+  }
+  
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e9ecef;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+  }
+  
+  .modalHeader h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #2e7d32;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #6c757d;
+  }
+  
+  .pestDetailContent {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .pestDetailImage {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pestDetailImage img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  
+  .pestDetailInfo {
+    padding: 0 20px 20px;
+  }
+  
+  .infoSection {
+    margin-bottom: 15px;
+  }
+  
+  .infoSection h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2e7d32;
+  }
+  
+  .infoSection p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #495057;
+  }
+  
+  .recommendationSection {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+  }
+  
+  .recommendationHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: #2e7d32;
+  }
+  
+  .recommendationHeader h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .recommendationSection ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  .recommendationSection li {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #495057;
+  }
+  
+  .modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 16px 20px;
+    border-top: 1px solid #e9ecef;
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+  }
+  
+  .formGroup {
+    margin-bottom: 16px;
+    padding: 0 20px;
+  }
+  
+  .formGroup:first-child {
+    padding-top: 16px;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #495057;
+  }
+  
+  .formGroup input,
+  .formGroup select,
+  .formGroup textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .formGroup textarea {
+    resize: vertical;
+  }
+  
+  .formGroup input:focus,
+  .formGroup select:focus,
+  .formGroup textarea:focus {
+    outline: none;
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+  }
+  
+  .formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 16px 20px;
+    border-top: 1px solid #e9ecef;
+  }
+  
+  .cancelButton {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    color: #495057;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .saveButton,
+  .actionButton {
+    background-color: #2e7d32;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .saveButton:hover,
+  .actionButton:hover {
+    background-color: #1b5e20;
+  }
+  
+  @media (min-width: 768px) {
+    .pestDetailContent {
+      flex-direction: row;
+      gap: 20px;
+    }
+  
+    .pestDetailImage {
+      width: 40%;
+    }
+  
+    .pestDetailInfo {
+      width: 60%;
+      padding-top: 20px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .pestsHeader {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .pestsActions {
+      width: 100%;
+    }
+  
+    .searchContainer {
+      width: 100%;
+    }
+  }
+  
+  

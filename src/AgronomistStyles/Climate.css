@@ -1,0 +1,365 @@
+.climateContainer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .climateHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .climateTitle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #2e7d32;
+  }
+  
+  .climateTitle h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .climateActions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .regionContainer,
+  .timeRangeContainer {
+    position: relative;
+  }
+  
+  .regionButton,
+  .timeRangeButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #495057;
+  }
+  
+  .regionButton:hover,
+  .timeRangeButton:hover {
+    background-color: #e9ecef;
+  }
+  
+  .regionMenu,
+  .timeRangeMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 180px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    margin-top: 5px;
+    overflow: hidden;
+  }
+  
+  .regionOption,
+  .timeRangeOption {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #495057;
+  }
+  
+  .regionOption:hover,
+  .timeRangeOption:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .regionOption.active,
+  .timeRangeOption.active {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-weight: 500;
+  }
+  
+  .exportButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .exportButton:hover {
+    background-color: #1b5e20;
+  }
+  
+  .climateGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .chartCard,
+  .alertsCard,
+  .forecastCard {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+  }
+  
+  .chartHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .chartTitle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2e7d32;
+  }
+  
+  .chartTitle h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .chartLegend {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .legendItem {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #6c757d;
+  }
+  
+  .legendColor {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  
+  .chartContainer {
+    height: 300px;
+  }
+  
+  .alertsHeader,
+  .forecastHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .alertsHeader h3,
+  .forecastHeader h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2e7d32;
+  }
+  
+  .regionName {
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  .alertsList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .alertItem {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+  }
+  
+  .alertItem.warning {
+    border-left: 4px solid #ff9800;
+  }
+  
+  .alertItem.critical {
+    border-left: 4px solid #f44336;
+  }
+  
+  .alertItem.info {
+    border-left: 4px solid #2196f3;
+  }
+  
+  .alertIcon {
+    color: #6c757d;
+  }
+  
+  .alertItem.warning .alertIcon {
+    color: #ff9800;
+  }
+  
+  .alertItem.critical .alertIcon {
+    color: #f44336;
+  }
+  
+  .alertItem.info .alertIcon {
+    color: #2196f3;
+  }
+  
+  .alertContent h4 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .alertContent p {
+    margin: 0 0 5px 0;
+    font-size: 13px;
+    color: #495057;
+  }
+  
+  .alertDate {
+    font-size: 12px;
+    color: #6c757d;
+  }
+  
+  .forecastGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+  }
+  
+  .forecastDay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+  }
+  
+  .forecastDayHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .forecastDayName {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .forecastDayDate {
+    font-size: 12px;
+    color: #6c757d;
+  }
+  
+  .forecastDayIcon {
+    margin-bottom: 10px;
+    color: #6c757d;
+  }
+  
+  .sunIcon {
+    width: 36px;
+    height: 36px;
+    background-color: #ffeb3b;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .sunIcon::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 50%;
+    border: 2px solid #ffeb3b;
+    opacity: 0.5;
+  }
+  
+  .forecastDayTemp,
+  .forecastDayRain,
+  .forecastDayWind {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  
+  .forecastDayTemp {
+    color: #f44336;
+  }
+  
+  .forecastDayRain {
+    color: #2196f3;
+  }
+  
+  .forecastDayWind {
+    color: #78909c;
+  }
+  
+  @media (max-width: 992px) {
+    .climateGrid {
+      grid-template-columns: 1fr;
+    }
+  
+    .forecastGrid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    .forecastDay:nth-child(n + 5) {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .forecastGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .forecastDay:nth-child(n + 4) {
+      display: none;
+    }
+  
+    .chartLegend {
+      margin-top: 10px;
+    }
+  }
+  
+  
