@@ -137,7 +137,7 @@ const LoginSignup = () => {
             email: data.email,
             password: data.password,
             role: data.role,
-            district: data.district // Backend might need to be updated to accept this field
+            district: data.district 
         }, {
             headers: {
                 "Content-Type": "application/json",
@@ -166,7 +166,24 @@ const LoginSignup = () => {
         }
 
         Notify.success("Registration Successful");
-        navigate("/dashboard");
+      
+        if (userData.user.role === 'Farmer'){
+          navigate('/dashboard');
+        }
+
+        else if (userData.user.role === 'Buyer'){
+          navigate('/buyersoverview');
+        }
+        else if (userData.user.role === 'Agronomist'){
+          navigate('/agrosoilanalysis');
+        }
+
+        else{
+          navigate('/home')
+        }
+
+
+
     } catch (error) {
         console.error("Registration error:", error);
         console.error("Error response:", error.response?.data);
