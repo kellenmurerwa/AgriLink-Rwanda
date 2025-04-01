@@ -29,6 +29,8 @@ import MessagingHub from './Dashboards/MessagingHub';
 import OperationsManagement from './Dashboards/OperationManagement';
 import MarketAccess from './Dashboards/Market';
 import Space from './Dashboards/Space';
+import  Library  from './Dashboards/Library';
+import TrainingPrograms from './Dashboards/Trainings';
 function App() {
   return ( 
     <BrowserRouter>
@@ -60,6 +62,8 @@ function App() {
         <Route path='/market' element ={<MarketAccess/>}/>
         <Route path='/community' element ={<MessagingHub/>}/>
         <Route path='/space' element ={<Space/>}/>
+        <Route path='/library' element ={<Library/>}/>
+        <Route path='/trainings' element ={<TrainingPrograms/>}/>
         </Route>
         
         <Route path="/" element={<BuyersLayout />}>

@@ -1,1284 +1,409 @@
-/* Support and Learning Space Styles */
+/* Messages Container */
+.messages-container {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex: 1;
+  background-color: #fff;
+  height: 100%;
+}
 
-.support-learning-container {
-    font-family: "Inter", sans-serif;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  /* Tabs Navigation */
-  .support-tabs {
-    display: flex;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .tab {
-    padding: 12px 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #555;
-    transition: background-color 0.2s;
-  }
-  
-  .tab:hover {
-    background-color: #eee;
-  }
-  
-  .tab.active {
-    background-color: #fff;
-    border-bottom: 2px solid #2a6a37;
-    color: #2a6a37;
-  }
-  
-  /* Main Content */
-  .support-content {
-    flex: 1;
-    display: flex;
-    overflow: hidden;
-  }
-  
-  /* Messages Container */
+/* Contacts Sidebar */
+.contacts-sidebar {
+  width: 280px;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.contacts-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.contacts-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  color: #777;
+  transition: background-color 0.2s;
+}
+
+.icon-button:hover {
+  background-color: #eee;
+  color: #2a6a37;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+.search-icon {
+  color: #999;
+  margin-right: 8px;
+}
+
+.search-box input {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 14px;
+  color: #555;
+  width: 100%;
+}
+
+.contacts-categories {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+  overflow-x: auto;
+}
+
+.category-button {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.category-button:hover {
+  background-color: #eee;
+}
+
+.category-button.active {
+  background-color: #2a6a37;
+  color: #fff;
+  border-color: #2a6a37;
+}
+
+.contacts-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-item:hover {
+  background-color: #f9f9f9;
+}
+
+.contact-item.active {
+  background-color: #f0f8f2;
+}
+
+.contact-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+  position: relative;
+}
+
+.contact-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.status-indicator.online {
+  background-color: #27ae60;
+}
+
+.contact-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.contact-name-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.contact-name-time h4 {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-name-time .time {
+  font-size: 12px;
+  color: #999;
+}
+
+.contact-role {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.last-message {
+  font-size: 13px;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.unread-badge {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: #e74c3c;
+  color: #fff;
+  font-size: 11px;
+  padding: 4px 6px;
+  border-radius: 20px;
+}
+
+/* Chat Window */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-contact-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat-contact-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-contact-info h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.chat-contact-info .status {
+  font-size: 12px;
+  color: #777;
+}
+
+.chat-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.message.user {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.message-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.message.user .message-avatar {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.message-content {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  max-width: 70%;
+}
+
+.message.user .message-content {
+  background-color: #e2f0d9;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.message-sender {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+.message-time {
+  font-size: 11px;
+  color: #999;
+}
+
+.message-text {
+  font-size: 14px;
+  color: #333;
+  word-wrap: break-word;
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-top: 1px solid #ddd;
+}
+
+.attachment-buttons {
+  display: flex;
+  gap: 8px;
+  margin-right: 12px;
+}
+
+.attachment-buttons label {
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.message-input input {
+  flex: 1;
+  border: none;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+  outline: none;
+}
+
+.send-button {
+  background-color: #2a6a37;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.send-button:hover {
+  background-color: #1d512a;
+}
+
+/* Empty Chat */
+.empty-chat {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-chat-content {
+  text-align: center;
+  color: #777;
+}
+
+.empty-chat-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.empty-chat-content p {
+  font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .messages-container {
-    display: flex;
-    flex: 1;
-    background-color: #fff;
+    flex-direction: column;
   }
-  
-  /* Contacts Sidebar */
+
   .contacts-sidebar {
-    width: 280px;
-    border-right: 1px solid #ddd;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .contacts-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .contacts-header h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .contacts-actions {
-    display: flex;
-    gap: 8px;
-  }
-  
-  .icon-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 6px;
-    border-radius: 4px;
-    color: #777;
-    transition: background-color 0.2s;
-  }
-  
-  .icon-button:hover {
-    background-color: #eee;
-  }
-  
-  .search-box {
-    display: flex;
-    align-items: center;
-    background-color: #f9f9f9;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    padding: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .search-icon {
-    color: #999;
-    margin-right: 8px;
-  }
-  
-  .search-box input {
-    border: none;
-    background: none;
-    outline: none;
-    font-size: 14px;
-    color: #555;
     width: 100%;
-  }
-  
-  .contacts-categories {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 15px;
-    overflow-x: auto;
-  }
-  
-  .category-button {
-    background: none;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    padding: 6px 12px;
-    font-size: 13px;
-    color: #666;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-    white-space: nowrap;
-  }
-  
-  .category-button:hover {
-    background-color: #eee;
-  }
-  
-  .category-button.active {
-    background-color: #2a6a37;
-    color: #fff;
-    border-color: #2a6a37;
-  }
-  
-  .contacts-list {
-    overflow-y: auto;
-    flex: 1;
-  }
-  
-  .contact-item {
-    display: flex;
-    align-items: center;
-    padding: 12px;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    position: relative;
-  }
-  
-  .contact-item:last-child {
-    border-bottom: none;
-  }
-  
-  .contact-item:hover {
-    background-color: #f9f9f9;
-  }
-  
-  .contact-item.active {
-    background-color: #f0f8f2;
-  }
-  
-  .contact-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 12px;
-    position: relative;
-  }
-  
-  .contact-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .status-indicator {
-    position: absolute;
-    bottom: 2px;
-    right: 2px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #ddd;
-  }
-  
-  .status-indicator.online {
-    background-color: #27ae60;
-  }
-  
-  .contact-info {
-    flex: 1;
-    overflow: hidden;
-  }
-  
-  .contact-name-time {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 4px;
-  }
-  
-  .contact-name-time h4 {
-    margin: 0;
-    font-size: 14px;
-    color: #333;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .contact-name-time .time {
-    font-size: 12px;
-    color: #999;
-  }
-  
-  .contact-role {
-    font-size: 12px;
-    color: #777;
-    margin-bottom: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .last-message {
-    font-size: 13px;
-    color: #555;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 0;
-  }
-  
-  .unread-badge {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    background-color: #e74c3c;
-    color: #fff;
-    font-size: 11px;
-    padding: 4px 6px;
-    border-radius: 20px;
-  }
-  
-  /* Chat Window */
-  .chat-window {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .chat-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
+    border-right: none;
     border-bottom: 1px solid #ddd;
-  }
-  
-  .chat-contact-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .chat-contact-info img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .chat-contact-info h3 {
-    margin: 0;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .chat-contact-info .status {
-    font-size: 12px;
-    color: #777;
-  }
-  
-  .chat-actions {
-    display: flex;
-    gap: 8px;
-  }
-  
-  .chat-messages {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .message {
-    display: flex;
-    margin-bottom: 15px;
-  }
-  
-  .message.user {
-    justify-content: flex-end;
-    text-align: right;
-  }
-  
-  .message-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-  
-  .message.user .message-avatar {
-    margin-left: 10px;
-    margin-right: 0;
-  }
-  
-  .message-content {
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    padding: 10px 12px;
-    max-width: 70%;
-  }
-  
-  .message.user .message-content {
-    background-color: #e2f0d9;
-  }
-  
-  .message-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  .message-sender {
-    font-size: 13px;
-    font-weight: 500;
-    color: #333;
-  }
-  
-  .message-time {
-    font-size: 11px;
-    color: #999;
-  }
-  
-  .message-text {
-    font-size: 14px;
-    color: #333;
-    word-wrap: break-word;
-  }
-  
-  .message-input {
-    display: flex;
-    align-items: center;
-    padding: 15px 20px;
-    border-top: 1px solid #ddd;
-  }
-  
-  .attachment-buttons {
-    display: flex;
-    gap: 8px;
-    margin-right: 12px;
-  }
-  
-  .message-input input {
-    flex: 1;
-    border: none;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-    padding: 10px;
-    font-size: 14px;
-    color: #555;
-    outline: none;
-  }
-  
-  .send-button {
-    background-color: #2a6a37;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .send-button:hover {
-    background-color: #1d512a;
-  }
-  
-  /* Empty Chat */
-  .empty-chat {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .empty-chat-content {
-    text-align: center;
-    color: #777;
-  }
-  
-  .empty-chat-content h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .empty-chat-content p {
-    font-size: 14px;
-  }
-  
-  /* Library Container */
-  .library-container {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .library-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .library-header h2 {
-    font-size: 24px;
-    color: #333;
-    margin: 0;
-  }
-  
-  .library-categories {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-    overflow-x: auto;
-  }
-  
-  .category-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #f9f9f9;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 12px 15px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-    white-space: nowrap;
-  }
-  
-  .category-card:hover {
-    background-color: #eee;
-  }
-  
-  .category-card.active {
-    background-color: #2a6a37;
-    color: #fff;
-    border-color: #2a6a37;
-  }
-  
-  .category-icon {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-  
-  .category-name {
-    font-size: 13px;
-  }
-  
-  .resource-filters {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .filter-title {
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .filter-options {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .filter-button {
-    background: none;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    padding: 6px 12px;
-    font-size: 13px;
-    color: #666;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-    white-space: nowrap;
-  }
-  
-  .filter-button:hover {
-    background-color: #eee;
-  }
-  
-  .filter-button.active {
-    background-color: #2a6a37;
-    color: #fff;
-    border-color: #2a6a37;
-  }
-  
-  .sort-dropdown {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 13px;
-    color: #555;
-  }
-  
-  .sort-dropdown select {
-    padding: 6px 10px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    font-size: 13px;
-    color: #555;
-    outline: none;
-  }
-  
-  .resource-list {
-    flex: 1;
-    overflow-y: auto;
-  }
-  
-  .section-title {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .resource-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-  }
-  
-  .resource-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    transition: transform 0.2s;
-  }
-  
-  .resource-card:hover {
-    transform: translateY(-3px);
-  }
-  
-  .resource-image {
-    position: relative;
-  }
-  
-  .resource-image img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-  }
-  
-  .resource-type {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 4px;
-  }
-  
-  .bookmark-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    font-size: 16px;
-    padding: 6px;
-    border-radius: 4px;
-    transition: color 0.2s;
-  }
-  
-  .bookmark-button:hover {
-    color: #f39c12;
-  }
-  
-  .bookmark-button.active {
-    color: #f39c12;
-  }
-  
-  .resource-content {
-    padding: 15px;
-  }
-  
-  .resource-title {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 8px;
-  }
-  
-  .resource-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12px;
-    color: #777;
-  }
-  
-  .resource-category {
-    font-weight: 500;
-  }
-  
-  /* Training Container */
-  .training-container {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .training-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .training-header h2 {
-    font-size: 24px;
-    color: #333;
-    margin: 0;
-  }
-  
-  .training-actions {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .training-filters {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .filter-select {
-    padding: 8px 12px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    font-size: 14px;
-    color: #555;
-    background-color: #fff;
-    outline: none;
-  }
-  
-  .my-progress-section {
-    margin-bottom: 20px;
-  }
-  
-  .my-progress-section h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .progress-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-  }
-  
-  .stat-card {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-  }
-  
-  .stat-value {
-    font-size: 24px;
-    font-weight: 600;
-    color: #2a6a37;
-    margin-bottom: 5px;
-  }
-  
-  .stat-label {
-    font-size: 13px;
-    color: #555;
-  }
-  
-  .current-modules-section {
-    margin-bottom: 20px;
-  }
-  
-  .current-modules-section h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .modules-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
-  .module-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  
-  .module-card:hover {
-    transform: translateY(-3px);
-  }
-  
-  .module-image {
-    position: relative;
-  }
-  
-  .module-image img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-  }
-  
-  .module-progress {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 8px 10px;
-    font-size: 12px;
-  }
-  
-  .progress-text {
-    margin-bottom: 3px;
-  }
-  
-  .progress-bar {
-    height: 8px;
-    background-color: #ddd;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  
-  .progress-fill {
-    height: 100%;
-    background-color: #2a6a37;
-    width: 0;
-    transition: width 0.3s;
-  }
-  
-  .module-content {
-    padding: 15px;
-  }
-  
-  .module-title {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 8px;
-  }
-  
-  .module-description {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 12px;
-  }
-  
-  .module-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12px;
-    color: #777;
-  }
-  
-  .lessons-count,
-  .time-estimate {
-    font-weight: 500;
-  }
-  
-  .module-tags {
-    display: flex;
-    gap: 5px;
-    margin-top: 10px;
-  }
-  
-  .tag {
-    background-color: #e9ecef;
-    color: #495057;
-    font-size: 11px;
-    padding: 4px 6px;
-    border-radius: 4px;
-  }
-  
-  .recommended-modules-section {
-    margin-bottom: 20px;
-  }
-  
-  .recommended-modules-section h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .recommendation-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
-  .recommendation-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-  }
-  
-  .recommendation-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-  }
-  
-  .recommendation-content {
-    padding: 15px;
-  }
-  
-  .recommendation-content h4 {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 8px;
-  }
-  
-  .recommendation-content p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 12px;
-  }
-  
-  .enroll-button {
-    background-color: #2a6a37;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .enroll-button:hover {
-    background-color: #1d512a;
-  }
-  
-  /* Module Details */
-  .module-details {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .module-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .module-header h2 {
-    font-size: 24px;
-    color: #333;
-    margin: 0;
-  }
-  
-  .back-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    color: #555;
-    transition: color 0.2s;
-  }
-  
-  .back-button:hover {
-    color: #2a6a37;
-  }
-  
-  .module-progress-bar {
-    margin-bottom: 20px;
-  }
-  
-  .module-content {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .module-description {
-    flex: 1;
-  }
-  
-  .module-description h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .module-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
-  }
-  
-  .meta-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .module-lessons {
-    flex: 1;
-  }
-  
-  .module-lessons h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .lessons-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .lesson-item {
-    display: flex;
-    align-items: center;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 12px 15px;
-    gap: 10px;
-  }
-  
-  .lesson-status {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: #ddd;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .lesson-item.completed .lesson-status {
-    background-color: #27ae60;
-  }
-  
-  .lesson-content {
-    flex: 1;
-  }
-  
-  .lesson-content h4 {
-    font-size: 14px;
-    color: #333;
-    margin: 0;
-  }
-  
-  .lesson-button {
-    background-color: #2a6a37;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .lesson-button:hover {
-    background-color: #1d512a;
-  }
-  
-  /* Government Programs Container */
-  .programs-container {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .programs-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .programs-header h2 {
-    font-size: 24px;
-    color: #333;
-    margin: 0;
-  }
-  
-  .programs-actions {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .programs-filters {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .program-alerts {
-    margin-bottom: 20px;
-  }
-  
-  .alert {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 15px;
-    display: flex;
-    gap: 15px;
-  }
-  
-  .alert-icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #f39c12;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-  }
-  
-  .alert-content h4 {
-    font-size: 16px;
-    color: #333;
-    margin: 0;
-  }
-  
-  .alert-button {
-    background-color: #2a6a37;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .eligibility-checker {
-    background-color: #f0f8f2;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .eligibility-checker h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .eligibility-button {
-    background-color: #2a6a37;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .programs-list {
-    flex: 1;
-    overflow-y: auto;
-  }
-  
-  .program-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    padding: 15px;
-    margin-bottom: 15px;
-  }
-  
-  .program-title {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 8px;
-  }
-  
-  .program-description {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 12px;
-  }
-  
-  .program-details {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-  
-  .detail-item {
-    display: flex;
-    gap: 5px;
-    font-size: 13px;
-    color: #555;
-  }
-  
-  .detail-label {
-    font-weight: 500;
-  }
-  
-  .program-actions {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .program-button {
-    background: none;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 8px 12px;
-    font-size: 13px;
-    color: #666;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-    white-space: nowrap;
-  }
-  
-  .program-button.primary {
-    background-color: #2a6a37;
-    color: #fff;
-    border-color: #2a6a37;
-  }
-  
-  .program-button.primary:hover {
-    background-color: #1d512a;
-  }
-  
-  .program-button.secondary:hover {
-    background-color: #f5f5f5;
-  }
-  
-  /* Empty state */
-  .empty-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  .empty-state p {
-    color: #666;
-    margin-bottom: 15px;
-  }
-  
-  .btn-secondary {
-    background-color: rgba(42, 106, 55, 0.1);
-    color: #2a6a37;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .btn-secondary:hover {
-    background-color: rgba(42, 106, 55, 0.2);
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .module-content {
-      flex-direction: column;
-    }
-  
-    .contacts-sidebar {
-      width: 240px;
-    }
-  
-    .programs-header,
-    .programs-actions {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .programs-actions {
-      gap: 10px;
-      margin-top: 10px;
-    }
-  
-    .search-box {
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .messages-container {
-      flex-direction: column;
-    }
-  
-    .contacts-sidebar {
-      width: 100%;
-      border-right: none;
-      border-bottom: 1px solid #ddd;
-    }
-  
-    .resource-filters {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .filter-options {
-      margin: 10px 0;
-      flex-wrap: wrap;
-    }
-  
-    .sort-dropdown {
-      width: 100%;
-    }
-  
-    .program-actions {
-      flex-wrap: wrap;
-    }
-  
-    .program-button {
-      flex: 1;
-      min-width: 120px;
-    }
-  }
-  
-  
+    max-height: 300px;
+  }
+}
+
+.hidden-input {
+  display: none;
+}
+
