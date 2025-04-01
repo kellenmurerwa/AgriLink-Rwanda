@@ -76,7 +76,7 @@ fetchUserName();
         {profilePic ? (
           <img src={profilePic} alt="Profile" className="profileImage" />
         ) : (
-          "IB"
+          "img"
         )}
       </div>
       <span className="userName">{userName?userName:"Agri"}</span>
