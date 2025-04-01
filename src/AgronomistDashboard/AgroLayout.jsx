@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import AgroSideBar from './AgroSidebar';
+import AgroSideBar from './AgroSideBar';
 import AgroNavBar from '../AgronomistDashboard/AgroNavBar';
 import '../AgronomistStyles/AgroLayout.css';
 
