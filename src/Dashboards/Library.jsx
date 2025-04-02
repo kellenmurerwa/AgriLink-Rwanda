@@ -1,7 +1,8 @@
 import { useState } from "react"
 import "../DashboardStyles/Library.css"
 import { Search, PieChart, FileText, Bookmark } from "lucide-react"
-
+import photo1 from '../images/Screenshot 2025-04-02 124406.png'
+import photo2 from '../images/Screenshot 2025-04-02 124817.png'
 const Library = () => {
   const [activeResourceCategory, setActiveResourceCategory] = useState("all")
   const [activeResourceType, setActiveResourceType] = useState("All Types")
@@ -184,7 +185,7 @@ const Library = () => {
           {getSortedResources(getFilteredResources()).map((resource) => (
             <div key={resource.id} className="resource-card">
               <div className="resource-image">
-                <img src="/placeholder.svg?height=320&width=180" alt={resource.title} />
+                <img src={photo1} alt={resource.title} />
                 <span className={`resource-type ${resource.type}`}>{resource.type}</span>
                 <button
                   className={`bookmark-button ${resource.bookmark ? "active" : ""}`}
@@ -231,7 +232,7 @@ const Library = () => {
                 .map((resource) => (
                   <div key={`popular-${resource.id}`} className="resource-card">
                     <div className="resource-image">
-                      <img src="/placeholder.svg?height=320&width=180" alt={resource.title} />
+                      <img src={photo2} alt={resource.title} />
                       <span className={`resource-type ${resource.type}`}>{resource.type}</span>
                       <button
                         className={`bookmark-button ${resource.bookmark ? "active" : ""}`}

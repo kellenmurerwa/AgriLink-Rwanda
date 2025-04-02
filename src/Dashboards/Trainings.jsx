@@ -1,6 +1,8 @@
 import { useState, useRef } from "react"
 import "../DashboardStyles/Trainings.css"
 import { Search, Calendar, Award, Download, X, CheckCircle, AlertCircle, FileText, ChevronRight } from "lucide-react"
+import photo3 from '../images/Screenshot 2025-04-02 124927.png'
+import photo4 from '../images/Screenshot 2025-04-02 125455.png'
 
 const TrainingPrograms = () => {
   const [activeTab, setActiveTab] = useState("training")
@@ -518,7 +520,7 @@ const TrainingPrograms = () => {
                     {filteredModules.map((module) => (
                       <div key={module.id} className="module-card" onClick={() => handleModuleSelect(module)}>
                         <div className="module-image">
-                          <img src="/placeholder.svg?height=320&width=180" alt={module.title} />
+                          <img src={photo4} alt={module.title} />
                           <div className="module-progress">
                             <div className="progress-text">
                               {Math.round((module.completedLessons / module.totalLessons) * 100)}% Complete
@@ -1088,7 +1090,7 @@ const TrainingPrograms = () => {
             <div className="modal-content">
               <div className="lesson-video">
                 <div className="video-placeholder">
-                  <img src="/placeholder.svg?height=400&width=600" alt="Lesson video" />
+                  <img src={photo3} alt="Lesson video" />
                   {lessonProgress >= 100 ? (
                     <div className="lesson-complete">
                       <CheckCircle size={48} className="success-icon" />
