@@ -1,6 +1,11 @@
 import { useState } from "react"
 import "../AgronomistStyles/Pests.css"
 import { Bug, Search, Filter, Plus, AlertTriangle, Info } from "lucide-react"
+import pest1 from '../images/Screenshot 2025-04-02 131305.png'
+import pest2 from '../images/Screenshot 2025-04-02 131639.png'
+import pest3 from '../images/Screenshot 2025-04-02 131728.png'
+import pest4 from '../images/Screenshot 2025-04-02 131800.png'
+import pest5 from '../images/Screenshot 2025-04-02 131836.png'
 
 const Pests = () => {
   const [showAddModal, setShowAddModal] = useState(false)
@@ -15,7 +20,7 @@ const Pests = () => {
       symptoms: "Curling leaves, yellowing, stunted growth, sticky honeydew on leaves",
       treatment: "Neem oil, insecticidal soap, ladybugs as natural predators",
       severity: "medium",
-      image: "/placeholder.svg?height=200&width=200",
+      image: pest1,
     },
     {
       id: 2,
@@ -25,7 +30,7 @@ const Pests = () => {
       symptoms: "White powdery spots on leaves and stems",
       treatment: "Fungicides, baking soda solution, proper plant spacing",
       severity: "high",
-      image: "/placeholder.svg?height=200&width=200",
+      image: pest2,
     },
     {
       id: 3,
@@ -35,7 +40,7 @@ const Pests = () => {
       symptoms: "Broken tassels, holes in stalks, sawdust-like frass",
       treatment: "Bt (Bacillus thuringiensis) sprays, crop rotation",
       severity: "high",
-      image: "/placeholder.svg?height=200&width=200",
+      image: pest3,
     },
     {
       id: 4,
@@ -45,7 +50,7 @@ const Pests = () => {
       symptoms: "Dark water-soaked spots on leaves, white fuzzy growth",
       treatment: "Copper-based fungicides, remove infected plants",
       severity: "critical",
-      image: "/placeholder.svg?height=200&width=200",
+      image: pest4,
     },
     {
       id: 5,
@@ -55,7 +60,7 @@ const Pests = () => {
       symptoms: "Stunted growth, yellowing, galls on roots",
       treatment: "Crop rotation, resistant varieties, soil solarization",
       severity: "medium",
-      image: "/placeholder.svg?height=200&width=200",
+      image:pest5,
     },
   ])
 
