@@ -1,7 +1,11 @@
 import { useState, useEffect, useRef } from "react"
 import "../DashboardStyles/Space.css"
 import { Search, Filter, Bell, Users, MoreVertical, Send, Paperclip, Image, Mic, MessageCircle } from "lucide-react"
-
+import Jean from '../images/Screenshot 2025-04-02 122916'
+import Marie from '../images/Screenshot 2025-04-02 122931'
+import David from '../images/Screenshot 2025-04-02 123115'
+import Sarah from '../images/Screenshot 2025-04-02 123030'
+import Michel from '../images/Screenshot 2025-04-02 123050'
 const Space = () => {
   // States for chat functionality
   const [activeChat, setActiveChat] = useState(null)
@@ -18,7 +22,7 @@ const Space = () => {
       id: 1,
       name: "Mugisha Jean",
       role: "Agronomist",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: Jean,
       online: true,
       unread: 3,
       lastMessage: "Do you have any questions about crop rotation?",
@@ -27,7 +31,7 @@ const Space = () => {
       id: 2,
       name: "Uwase Marie",
       role: "Buyer",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: Marie,
       online: false,
       unread: 0,
       lastMessage: "I can offer 20,000 RWF per bushel for your organic wheat",
@@ -36,7 +40,7 @@ const Space = () => {
       id: 3,
       name: "Nshimiyimana David",
       role: "Farmer",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: David,
       online: true,
       unread: 0,
       lastMessage: "How are your corn crops doing this season?",
@@ -45,7 +49,7 @@ const Space = () => {
       id: 4,
       name: "Mukamana Sarah",
       role: "Extension Agent",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: Sarah,
       online: false,
       unread: 1,
       lastMessage: "New subsidy program available for sustainable farming",
@@ -54,7 +58,7 @@ const Space = () => {
       id: 5,
       name: "Hakizimana Michel",
       role: "Supplier",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: Michel,
       online: true,
       unread: 0,
       lastMessage: "The fertilizer shipment will arrive next Tuesday",
