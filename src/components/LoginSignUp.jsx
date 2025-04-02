@@ -99,7 +99,7 @@ const LoginSignup = () => {
         navigate('/buyersoverview');
       }
       else if (userRole === 'Agronomist'){
-        navigate('/agrosoilanalysis');
+        navigate('/farmers');
       }
 
       else{
@@ -175,7 +175,7 @@ const LoginSignup = () => {
           navigate('/buyersoverview');
         }
         else if (userData.user.role === 'Agronomist'){
-          navigate('/agrosoilanalysis');
+          navigate('/farmers');
         }
 
         else{
