@@ -69,7 +69,8 @@
   }
   
   .submitButton {
-    width: 100%;
+    margin-left: 19px;
+    width: 89%;
     padding: 10px 16px;
     background-color: #2c8d46;
     color: white;
@@ -77,7 +78,6 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s;
   }
   .formFooter {
     margin-top: 16px;
