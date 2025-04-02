@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from "react"
 import "../DashboardStyles/Space.css"
 import { Search, Filter, Bell, Users, MoreVertical, Send, Paperclip, Image, Mic, MessageCircle } from "lucide-react"
-import Jean from '../images/Screenshot 2025-04-02 122916'
-import Marie from '../images/Screenshot 2025-04-02 122931'
-import David from '../images/Screenshot 2025-04-02 123115'
-import Sarah from '../images/Screenshot 2025-04-02 123030'
-import Michel from '../images/Screenshot 2025-04-02 123050'
+import Jean from '../images/Screenshot 2025-04-02 122916.png'
+import Marie from '../images/Screenshot 2025-04-02 122931.png'
+import David from '../images/Screenshot 2025-04-02 123115.png'
+import Sarah from '../images/Screenshot 2025-04-02 123030.png'
+import Michel from '../images/Screenshot 2025-04-02 123050.png'
+
 const Space = () => {
   // States for chat functionality
   const [activeChat, setActiveChat] = useState(null)
